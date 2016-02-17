@@ -1,0 +1,20 @@
+{ 
+  "name": "whistle.help",
+  "version": "0.0.0",
+  "description": "whistle offline help",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/whistle-plugins/whistle.help.git"
+  },
+  "keywords": [
+    "whistle",
+    "help"
+  ],
+  "author": "avenwu <avenwu@vip.qq.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "git+https://github.com/whistle-plugins/whistle.help/issues"
+  },
+  "homepage": "https://github.com/whistle-plugins/whistle.help#whistlehelp"
+}
