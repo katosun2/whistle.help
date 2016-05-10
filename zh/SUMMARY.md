@@ -15,9 +15,9 @@
 	* [About](webui/about.md)
 	* [Online](webui/online.md)
 * [插件开发](plugins.md)
-	* [example 1](README11.md)
-	* [example 1](README12.md)
-	* [example 1](README13.md)
+	* [处理转发的请求](server.md)
+	* [开发配置页面](webui.md)
+	* [设置动态规则](rules.md)
 * [功能列表](rules.md)
-	* [hosts](rules/hosts.md)
+	* [hosts(配置hosts)](rules/hosts.md)
 
