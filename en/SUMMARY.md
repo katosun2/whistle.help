@@ -17,7 +17,7 @@
 * [插件开发](plugins/README.md)
 	* [处理请求](plugins/server.md)
 	* [配置页面](plugins/webui.md)
-	* [设置规则](plugins/rules.md)
+	* [内置规则](plugins/rules.md)
 * [功能列表](rules/README.md)
 	* [hosts(配置hosts)](rules/hosts.md)
 	* [req(配置hosts)](rules/req.md)
