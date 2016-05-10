@@ -2,6 +2,8 @@
 * [安装启动](README2.md)
 * [设置代理](README3.md)
 * [快速上手](README4.md)
+* [配置模式](README51.md)
+* [匹配方式](README52.md)
 * [界面操作](README5.md)
 	* [example 1](README6.md)
 	* [example 1](README7.md)
@@ -12,4 +14,5 @@
 	* [example 1](README12.md)
 	* [example 1](README13.md)
 * [功能列表](README14.md)
+	* [hosts](rules/hosts.md)
 
