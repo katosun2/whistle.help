@@ -1,5 +1,5 @@
 # 更新whistle
-> 为了能使用whistle的所有功能，请确保你的whistle是最新版本，版本变更点请查看：[CHANGELOG](https://github.com/avwo/whistle/blob/master/CHANGELOG.md#-)
+> 为了能使用whistle的所有功能，请确保你的whistle是当前最新版本，版本变更点请查看：[CHANGELOG](https://github.com/avwo/whistle/blob/master/CHANGELOG.md#-)
 
 执行命令更新whistle(mac或linux用户，如果安装过程出现异常，请在命令行前面加`sudo`，如: `sudo npm install -g whistle`)：
 	
