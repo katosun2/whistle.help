@@ -1,7 +1,7 @@
 # 协议列表
-1. [**host** (设置hosts)](#host)
-2. [**req** (修改请求属性)](#req)
-3. [**rule** (设置响应规则)](#rule)
+1. [**host** (设置hosts)](hosts.html)
+2. [**req** (修改请求属性)](req.html)
+3. [**rule** (设置响应规则)](rule/index.html)
 	- [**请求替换**](#请求替换)
 	- [**file** (替换本地文件)](#file)
 	- [**xfile** (替换本地文件，如果本地文件不存在，则请求线上)](#xfile)

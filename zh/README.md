@@ -23,7 +23,7 @@ whistle又是如何把操作的URI协议及其参数合成一个操作URI？首�
 			
 		如果key或value有空白字符用`encodeURIComponent`转换成实体编码，whistle会自动通过Node的`querystring.parse`把URI里面的值解析成JSON对象。
 		
-	- 利用[操作符](/webui/rules.html)`()`
+	- 利用[操作符](webui/rules.html)`()`
 
 			pattern protocol://({"key1":"value1","key2":"value2","keyN":"valueN"})
 			
@@ -70,7 +70,7 @@ whistle又是如何把操作的URI协议及其参数合成一个操作URI？首�
 
 	pattern operator-uri
 	
-其中，`pattern`可以参考[匹配方式](/pattern.html)，`operator-uri`可以参考[协议列表](/rules/index.html)。
+其中，`pattern`可以参考[匹配方式](pattern.html)，`operator-uri`可以参考[协议列表](rules/index.html)。
 
 
 whistle的配置是从采用左到右的模式(即：`pattern operator-uri`)，从上到下的优先顺序，为了兼容传统的hosts配置模式，whistle也支持如下的配置模式：
