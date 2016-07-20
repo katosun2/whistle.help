@@ -1,5 +1,6 @@
 * [概述](README.md)
 * [安装](install.md)
+* [更新](update.md)
 * [快速上手](quickstart.md)
 * [配置模式](config.md)
 * [匹配方式](pattern.md)

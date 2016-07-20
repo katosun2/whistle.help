@@ -3,24 +3,28 @@
 
 ### 安装node
 
-如果你的机器上已经安装了 `v0.10.0` 及以上版本的node(**推荐安装最新的node版本**)，可以忽略此步骤。
+whistle支持`v0.10.0`以上版本的Node，为获取更好的性能，推荐最新版本的Node。
 
-windows或mac可以直接访问[https://nodejs.org/](https://nodejs.org/)点击页面中间的 **INSTALL** 按钮下载安装包，下载完毕后默认安装即可。
+如果你的系统已经安装了`v0.10.0`以上版本的Node，可以忽略此步骤，直接进入安装whistle的步骤，否则：
 
-linux可以参考（推荐使用源码安装）：[http://my.oschina.net/blogshi/blog/260953](http://my.oschina.net/blogshi/blog/260953)
+1. Windows或Mac系统，访问[https://nodejs.org/](https://nodejs.org/)，安装**LTS**版本的Node，默认安装即可。
+2. Linux参考(推荐使用源码安装): 从Node官网[https://nodejs.org/en/download/](https://nodejs.org/en/download/)上下载最新版的**Source Code**(可以在Linux上用`wget`或者直接点击下载后上传到指定的Linux服务器)，解压文件(`tar xvf node-xxx`)后进入根目录依次执行`./configure`、`./make`和`./make install`。
+
 
 安装完node后，执行下面命令，查看当前node版本
 
 	$ node -v
-	v0.12.7
+	v4.4.0
 
-如果能正常输出node的版本号，表示node已安装成功。
+如果能正常输出node的版本号，表示node已安装成功(Windows系统可能需要重新打开cmd)。
 
 ### 安装whistle
 
-执行npm命令 `npm install -g whistle`，开始安装whistle （**mac或linux用户，如果安装过程出现异常，可以使用 `sudo npm install -g whistle`安装，下面命令类同，如果max或linux用户执行命令过程出现异常信息，都在命令前面加个 `sudo`**）
+Node安装成功后，执行如下npm命令安装whistle （**mac或linux的非root用户需要在命令行前面加`sudo`，如：`sudo npm install -g whistle`**）
 
 	$ npm install -g whistle
+	
+	
 	
 npm默认镜像是在国外，有时候安装速度很慢或者出现安装不了的情况，如果无法安装或者安装很慢，可以使用taobao的镜像安装：
 
@@ -30,42 +34,40 @@ npm默认镜像是在国外，有时候安装速度很慢或者出现安装不�
 
 	$ cnpm install -g whistle
 	
-*mac或linux用户，如果安装过程出现异常，可以使用 `sudo cnpm install -g whistle`安装*
+或者直接指定镜像安装：
 
+	$ npm install whistle -g --registry=https://registry.npm.taobao.org
+	
 
-whistle安装完成后，执行命令 `whistle help` (`v0.7.0`及以上版本也可以使用`w2 help`)，查看whistle的帮助信息
+whistle安装完成后，执行命令 `whistle help` 或 `w2 help`，查看whistle的帮助信息
 
-	$ whistle help		
+	$ w2 help		
 
 	  
-	Usage: whistle <command> [options]
-	
-	
-	Commands:
+	  Usage: w2 <command> [options]
 
-    run       Start a front service
-    start     Start a background service
-    stop      Stop current background service
-    restart   Restart current background service
-    help      Display help information
 
-	Options:
-	
+	  Commands:
+
+	    run       Start a front service
+	    start     Start a background service
+	    stop      Stop current background service
+	    restart   Restart current background service
+	    help      Display help information
+
+	  Options:
+
 	    -h, --help                                      output usage information
-	    -d, --debug [debug]                             debug mode
+	    -d, --debug                                     debug mode
 	    -n, --username [username]                       login username
 	    -w, --password [password]                       login password
-	    -p, --port [port]                               whistle port(8899 by default
-	)
-	    -m, --middlewares [script path or module name]  express middlewares path (as
-	: xx,yy/zz.js)
+	    -p, --port [port]                               whistle port(8899 by default)
+	    -m, --middlewares [script path or module name]  express middlewares path (as: xx,yy/zz.js)
 	    -u, --uipath [script path]                      web ui plugin path
-	    -t, --timneout [ms]                             request timeout(36000 ms by
-	default)
+	    -t, --timneout [ms]                             request timeout(36000 ms by default)
 	    -s, --sockets [number]                          max sockets
 	    -V, --version                                   output the version number
-	    -c, --custom <custom>                           custom parameters ("node --h
-	armony")
+	    -c, --command <command>                         command parameters ("node --harmony")
 
 	
 如果能正常输出whistle的帮助信息，表示whistle已安装成功。
@@ -129,5 +131,4 @@ whistle安装完成后，执行命令 `whistle help` (`v0.7.0`及以上版本也
 至此，whistle已经安装启动配置完毕，匹配方式、规则配置、ui操作、查看抓包数据、重发请求、构造请求等功能请参考：[使用方法](https://github.com/avwo/whistle/wiki)
 
 
-有什么问题可以通过QQ群反馈： 462558941
 
