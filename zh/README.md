@@ -13,7 +13,7 @@ whistle又是如何把操作的URI协议及其参数合成一个操作URI？首�
 		
 	由于uri里面不能有空白字符，如果value有空白字符，可以把value存在whistle的key-value系统Values，然后通过`pattern protocol://{key}`的方式传值，whistle会自动到Values里面加载`key`对应的值(如果value对应的是本地文件路径可以用`%20`替换空格)。
 
-2. 多参数(不定个数)的情形
+2. 多参数的情形
 
 	所谓多参数的操作类型指操作可以传人大于1个参数的情形，如：添加或修改请求响应头部字段。对这类型操作，需要传人一个`key-value`集合给whistle(whistle内部把这个集合转成一个JSON对象)，whistle采用把操作协议和`key-value`集合合成一个URI:
 	
