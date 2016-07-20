@@ -4,6 +4,7 @@
 * [配置模式](config.md)
 * [匹配方式](pattern.md)
 * [手动更新](update.md)
+* [用户反馈](feedback.md)
 * [界面操作](webui/README.md)
 	* [Network](webui/network.md)
 	* [Rules](webui/rules.md)
