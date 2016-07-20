@@ -1,5 +1,5 @@
 # 概述
-[whistle](https://github.com/avwo/whistle)是用[Node](https://nodejs.org/)实现的类似[Fiddler](http://www.telerik.com/fiddler/)的web调试代理工具，支持查看和修改HTTP(S)、Websocket请求响应数据，且支持跨平台(Windows、Mac、Linux等可以安装Node的操作系统)。whistle继承了Fiddler界面的一些优秀设计(如请求数据的展示)，但whistle不是Fiddler的复制品，whistle去掉了Fiddler只能通过断点的修改请求响应数据的方式，通过扩展系统hosts的配置方式及匹配方式，不仅支持域名，同时支持正则和路径的匹配方式，让所有对请求响应的操作都可以通过类似hosts的配置方式实现(hosts的配置还可以带上端口号)，实践证明这种方式使用起来根据方便，用户体验非常好。
+[whistle](https://github.com/avwo/whistle)是用[Node](https://nodejs.org/)实现的类似[Fiddler](http://www.telerik.com/fiddler/)的web调试代理工具，支持查看和修改HTTP(S)、Websocket请求响应数据，且支持跨平台(Windows、Mac、Linux等可以安装Node的操作系统)。whistle继承了Fiddler界面的一些优秀设计(如请求数据的展示)，但whistle不是Fiddler的复制品，whistle去掉了Fiddler只能通过断点的修改请求响应数据的方式，通过扩展系统hosts的配置方式及匹配方式，不仅支持域名，同时支持正则和路径的匹配方式，让所有对请求响应的操作都可以通过类似hosts的配置方式实现(最新版whistle支持带端口号的host配置)，实践证明这种方式使用起来根据方便，用户体验非常好。
 
 whistle是如何实现这种功能？首先，whistle把每类操作(如修改请求头的`referer`)抽象成一个URI协议(如`referer://`)，把每个具体操作对应着不同的URI协议及若干参数，whistle把该操作对应的协议及若干参数组成一个URI；从而每个操作对应一个URI(如修改referer: `referer://http://wproxy.org`)；最后，把对请求响应的操作转换成请求url到操作URI的匹配(whistle也提供了更加丰富的域名、路径、正则三种匹配方式)。
 
