@@ -8,7 +8,7 @@ whistle支持`v0.10.0`以上版本的Node，为获取更好的性能，推荐最
 如果你的系统已经安装了`v0.10.0`以上版本的Node，可以忽略此步骤，直接进入安装whistle的步骤，否则：
 
 1. Windows或Mac系统，访问[https://nodejs.org/](https://nodejs.org/)，安装**LTS**版本的Node，默认安装即可。
-2. Linux参考(推荐使用源码安装): 从Node官网[https://nodejs.org/en/download/](https://nodejs.org/en/download/)上下载最新版的**Source Code**(可以在Linux上用`wget`或者直接点击下载后上传到指定的Linux服务器)，解压文件(`tar xvf node-xxx`)后进入根目录依次执行`./configure`、`./make`和`./make install`。
+2. Linux参考(推荐使用源码安装): 从Node官网[https://nodejs.org/en/download/](https://nodejs.org/en/download/)上下载最新版的**Source Code**(可以在Linux上用`wget`命令下载或者直接点击下载后上传到指定的Linux服务器)，解压文件(`tar xvf node-xxx`)后进入解压后的根目录(`node-xxx`)依次执行`./configure`、`./make`和`./make install`。
 
 
 安装完node后，执行下面命令，查看当前node版本
