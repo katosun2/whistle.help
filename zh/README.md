@@ -90,3 +90,5 @@ whistle的配置是从采用左到右的模式(即：`pattern operator-uri`)，�
 		operator-uri pattern1 pattern2 patternN
 		
 	
+# License
+[MIT](https://github.com/avwo/whistle/blob/master/LICENSE)
