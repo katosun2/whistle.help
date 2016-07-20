@@ -75,26 +75,26 @@ whistle安装完成后，执行命令 `whistle help` 或 `w2 help`，查看whist
 
 ### 启动whistle
 
-执行如下命令启动whistle (`v0.7.0`及以上版本也可以使用`w2 start`)
+执行如下命令启动whistle(最新版本的whistle支持三种等价的命令`whistle`、`w2`、`wproxy`):
 
-	$ whistle start
+	$ w2 start
 
 
-*Note: 如果要防止其他机器访问配置页面，可以在启动时加上登录用户名和密码 `-n yourusername -w yourpassword`。*
+*Note: 如果要防止其他人访问配置页面，可以在启动时加上登录用户名和密码 `-n yourusername -w yourpassword`。*
 
-重启whsitle (`v0.7.0`及以上版本也可以使用`w2 restart`)
+重启whsitle:
 
-	$ whistle restart
+	$ w2 restart
 
-停止whistle (`v0.7.0`及以上版本也可以使用`w2 stop`)
+停止whistle:
 
-	$ whistle stop
+	$ w2 stop
 
-如果whistle无法启动，可以执行如下命令启动whistle可以打印出错误信息 (`v0.7.0`及以上版本也可以使用`w2 run`)
+调试模式启动whistle(主要用于查看whistle的异常及插件开发):
 
-	$ whistle run
+	$ w2 run
 
-启动完whistle后，最后一步需要配置代理，并把代理指向whistle。
+启动完whistle后，最后一步需要配置代理。
 
 ### 配置代理
 
@@ -102,7 +102,7 @@ whistle安装完成后，执行命令 `whistle help` 或 `w2 help`，查看whist
 
 1. IP： 127.0.0.1(如果部署在远程服务器或虚拟机上，把ip改成对应服务器或虚拟机的ip即可)
 
-2. 端口： 8899(默认端口为8899，如果端口被占用，可以在启动是通过 `-p` 来指定新的端口，更多信息可以通过执行命令行 `whistle help` (`v0.7.0`及以上版本也可以使用`w2 help`) 查看)
+2. 端口： 8899(默认端口为8899，如果端口被占用，可以在启动是通过 `-p` 来指定新的端口，更多信息可以通过执行命令行 `w2 help` (`v0.7.0`及以上版本也可以使用`w2 help`) 查看)
 
 3. 勾选上 **对所有协议均使用相同的代理服务器**
 
@@ -117,18 +117,18 @@ whistle安装完成后，执行命令 `whistle help` 或 `w2 help`，查看whist
 
 2. 安装浏览器代理插件 (**推荐**)
 
-	1) 安装chrome代理插件： [whistle管理插件](https://github.com/avwo/whistle-for-chrome) 或者 [Proxy SwitchySharp](https://chrome.google.com/webstore/detail/proxy-switchysharp/dpplabbmogkhghncfbfdeeokoefdjegm)
+	1) 安装chrome代理插件： [whistle-for-chrome插件](https://github.com/avwo/whistle-for-chrome) 或者 [Proxy SwitchySharp](https://chrome.google.com/webstore/detail/proxy-switchysharp/dpplabbmogkhghncfbfdeeokoefdjegm)
 
 	2) 安装firefox代理插件： [Proxy Selector](https://addons.mozilla.org/zh-cn/firefox/addon/proxy-selector/)
 	
 
 ### 访问配置页面
-启动whistle及配置完代理后，用**Chrome浏览器(由于css兼容性问题界面只支持Chrome浏览器)**访问配置页面 [http://local.whistlejs.com/](http://local.whistlejs.com/)或请求列表页面[http://local.whistlejs.com/index.html](http://local.whistlejs.com/index.html)，如果能正常打开页面，whistle安装启动完毕，可以开始使用。
+启动whistle及配置完代理后，用**Chrome浏览器(由于css兼容性问题界面只支持Chrome浏览器)**访问配置页面 [http://local.whistlejs.com/](http://local.whistlejs.com/)，如果能正常打开页面，whistle安装启动完毕，可以开始使用。
 
-*Note: 也支持直接用ip访问配置页面： [http://whistleServerIP:whistlePort/](http://127.0.0.1:8899)*
+*Note: 也支持直接用ip访问配置页面： [http://whistleServerIP:whistlePort+1/](http://127.0.0.1:8900)*
 
 
-至此，whistle已经安装启动配置完毕，匹配方式、规则配置、ui操作、查看抓包数据、重发请求、构造请求等功能请参考：[使用方法](https://github.com/avwo/whistle/wiki)
+至此，whistle已经安装完毕，可以开始使用了。
 
 
 
