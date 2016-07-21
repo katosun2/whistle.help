@@ -53,7 +53,7 @@
         data-chapter-title="host"
         data-filepath="rules/host.md"
         data-basepath=".."
-        data-revision="Thu Jul 21 2016 20:39:11 GMT+0800 (CST)"
+        data-revision="Fri Jul 22 2016 00:47:41 GMT+0800 (CST)"
         data-innerlanguage="">
     
 
@@ -1399,8 +1399,38 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="hosts">hosts</h1>
+                        <h1 id="host">host</h1>
+<p>whistle&#x4E0D;&#x4EC5;&#x5B8C;&#x5168;&#x517C;&#x5BB9;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x7684;hosts&#x914D;&#x7F6E;&#x65B9;&#x5F0F;&#xFF0C;&#x4E5F;&#x652F;&#x6301;&#x57DF;&#x540D;&#x3001;&#x8DEF;&#x5F84;&#x3001;&#x6B63;&#x5219;&#x4E09;&#x79CD;&#x5339;&#x914D;&#x65B9;&#x5F0F;&#xFF0C;&#x800C;&#x4E14;&#x652F;&#x6301;&#x914D;&#x7F6E;&#x7AEF;&#x53E3;&#x53F7;&#x3002;</p>
+<p>host&#x7684;&#x914D;&#x7F6E;&#x6A21;&#x5F0F;&#xFF1A;</p>
+<ol>
+<li><p>&#x4F20;&#x7EDF;&#x7684;hosts&#x914D;&#x7F6E;&#x6A21;&#x5F0F;&#xFF1A;</p>
+<pre><code> ip pattern
 
+ # &#x7EC4;&#x5408;&#x6A21;&#x5F0F;
+ ip pattern1 pattern2 patternN
+</code></pre></li>
+<li><p>whistle&#x8FD8;&#x652F;&#x6301;&#x4EE5;&#x4E0B;&#x914D;&#x7F6E;&#x6A21;&#x5F0F;&#xFF1A;</p>
+<pre><code> ip pattern
+ pattern host://ip
+ host://ip pattern
+
+ # &#x5E26;&#x7AEF;&#x53E3;&#x53F7;&#xFF0C;whistle&#x4F1A;&#x628A;&#x8BF7;&#x6C42;&#x8F6C;&#x53D1;&#x7684;&#x6307;&#x5B9A;ip&#x548C;&#x7AEF;&#x53E3;&#x4E0A;
+ pattern host://ip:port
+ host://ip:port pattern
+
+ # &#x7EC4;&#x5408;&#x6A21;&#x5F0F;
+ pattern ip1 ipN host://ip:port operator-uri1 operator-uriN
+ host://ip:port pattern1 pattern2 patternN
+</code></pre></li>
+</ol>
+<pre><code>*&#x5176;&#x4E2D;&#xFF0C;pattern&#x53EF;&#x4EE5;&#x4E3A;&#x57DF;&#x540D;&#x3001;&#x8DEF;&#x5F84;&#x3001;&#x6B63;&#x5219;&#xFF0C;&#x5177;&#x4F53;&#x53C2;&#x8003;[&#x5339;&#x914D;&#x65B9;&#x5F0F;](pattern.html)*
+</code></pre><p><strong>&#x4F8B;&#x5B50;&#xFF1A;</strong></p>
+<p>&#x6307;&#x5B9A;<a href="http://www.ifeng.com/" target="_blank">www.ifeng.com</a>&#x7684;ip:</p>
+<pre><code>www.ifeng.com 127.0.0.1
+</code></pre><p>&#x6307;&#x5B9A;<a href="http://www.ifeng.com/" target="_blank">www.ifeng.com</a>&#x7684;ip&#x548C;&#x7AEF;&#x53E3;&#xFF0C;&#x628A;&#x8BF7;&#x6C42;&#x8F6C;&#x53D1;&#x5230;&#x672C;&#x5730;8080&#x7AEF;&#x53E3;:</p>
+<pre><code># www.ifeng.com 127.0.0.1
+www.ifeng.com host://127.0.0.1:8080
+</code></pre>
                     
                     </section>
                 

@@ -9,25 +9,32 @@
 
 1. 设置hosts
 
-	whistle不仅完全兼容操作系统的hosts配置方式，也支持域名、路径、正则三种匹配方式，而且支持配置端口号。
+whistle不仅完全兼容操作系统的hosts配置方式，也支持域名、路径、正则三种匹配方式，而且支持配置端口号。
 	
-	whistle支持以下几种配置模式：
-	
-		# 下面四种host配置方式等价
-		pattern ip
+host的配置模式：
+
+1. 传统的hosts配置模式：
+
+		ip pattern
+		
+		# 组合模式
+		ip pattern1 pattern2 patternN
+		
+2. whistle还支持以下配置模式：
+
 		ip pattern
 		pattern host://ip
 		host://ip pattern
 		
-		# 加上端口号，匹配pattern的请求会访问ip下的port端口
-		# 主要用途是去掉url中的端口号
+		# 带端口号，whistle会把请求转发的指定ip和端口上
 		pattern host://ip:port
 		host://ip:port pattern
 		
 		# 组合模式
-		pattern ip1 ip2 ipN host://ip:port
-		ip pattern1 pattern2 patternN
+		pattern ip1 ipN host://ip:port operator-uri1 operator-uriN
 		host://ip:port pattern1 pattern2 patternN
+		
+	
 		
 	*其中，pattern请参考[匹配方式](pattern.html)*
 		
