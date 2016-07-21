@@ -53,7 +53,7 @@
         data-chapter-title="安装配置"
         data-filepath="install.md"
         data-basepath="."
-        data-revision="Thu Jul 21 2016 18:02:46 GMT+0800 (CST)"
+        data-revision="Thu Jul 21 2016 20:39:11 GMT+0800 (CST)"
         data-innerlanguage="">
     
 
@@ -1495,17 +1495,27 @@ v4.4.0
 <p>&#x5982;&#x679C;&#x4F60;&#x60F3;&#x5728;&#x540C;&#x4E00;&#x53F0;&#x673A;&#x5668;&#x542F;&#x52A8;&#x591A;&#x4E2A;whistle&#xFF0C;&#x65B9;&#x4FBF;&#x591A;&#x4E2A;&#x6D4F;&#x89C8;&#x5668;&#x6216;&#x8005;&#x4F9B;&#x591A;&#x4EBA;&#x4F7F;&#x7528;&#xFF0C;&#x6709;&#x4E24;&#x79CD;&#x65B9;&#x5F0F;&#xFF1A;</p>
 <ol>
 <li>&#x5207;&#x6362;&#x5230;&#x4E0D;&#x540C;&#x7684;&#x7CFB;&#x7EDF;&#x7528;&#x6237;&#xFF0C;&#x5728;&#x6BCF;&#x4E2A;&#x7CFB;&#x7EDF;&#x7528;&#x6237;&#x542F;&#x52A8;&#x4E00;&#x4E2A;whistle&#x4EE3;&#x7406;&#x670D;&#x52A1;(&#x6BCF;&#x4E2A;&#x670D;&#x52A1;&#x7684;&#x7AEF;&#x53E3;&#x53F7;&#x53EF;&#x4EE5;&#x7528;&#x547D;&#x4EE4;&#x884C;&#x53C2;&#x6570;<code>w2 start -p xxxx</code>&#x6765;&#x6307;&#x5B9A;)</li>
-<li><p>&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5207;&#x6362;&#x89C4;&#x5219;&#x76EE;&#x5F55;&#x548C;&#x7AEF;&#x53E3;&#x53F7;&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x89E3;&#x51B3;</p>
+<li><p>&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5207;&#x6362;&#x89C4;&#x5219;&#x76EE;&#x5F55;&#x548C;&#x7AEF;&#x53E3;&#x53F7;&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x89E3;&#x51B3;(&#x6CE8;&#x610F;<code>S</code>&#x3001;<code>C</code>&#x90FD;&#x662F;&#x5927;&#x5199;)</p>
 <pre><code> w2 start -S newStorageDir -p newPort
 
  # &#x7CFB;&#x7EDF;&#x9ED8;&#x8BA4;&#x76EE;&#x5F55;&#x7684;&#x914D;&#x7F6E;&#x62F7;&#x8D1D;&#x5230;&#x65B0;&#x7684;&#x76EE;&#x5F55;
- w2 start -S newStorageDir -c -p newPort
+ w2 start -S newStorageDir -C -p newPort
 
  # &#x4E5F;&#x53EF;&#x4EE5;&#x6307;&#x5B9A;&#x8981;&#x62F7;&#x8D1D;&#x7684;&#x76EE;&#x5F55;
- w2 start -S newStorageDir -c storageDir -p newPort
+ w2 start -S newStorageDir -C storageDir -p newPort
 </code></pre><p> <em>Note: &#x8FD9;&#x79CD;&#x62F7;&#x8D1D;&#x662F;&#x8986;&#x76D6;&#x5F0F;&#x7684;&#xFF0C;&#x4F1A;&#x66FF;&#x6362;&#x76EE;&#x6807;&#x76EE;&#x5F55;&#x91CC;&#x9762;&#x539F;&#x6709;&#x6587;&#x4EF6;&#xFF0C;&#x542F;&#x52A8;&#x65F6;&#x8BBE;&#x7F6E;&#x4E86;&#x65B0;&#x7684;&#x5B58;&#x50A8;&#x76EE;&#x5F55;&#xFF0C;&#x5173;&#x95ED;&#x6216;&#x91CD;&#x542F;&#x65F6;&#x4E5F;&#x8981;&#x628A;&#x76EE;&#x5F55;&#x53C2;&#x6570;&#x5E26;&#x4E0A;(&#x7AEF;&#x53E3;&#x53F7;&#x4E0D;&#x8981;&#x5E26;&#x4E0A;)&#xFF1A;<code>w2 stop -S newStorageDir</code>&#x6216;<code>w2 restart -S newStorageDir</code></em></p>
 </li>
 </ol>
+<p>&#x6BD4;&#x5982;&#x5206;&#x522B;&#x5728;<code>8899</code>&#xFF0C;<code>8888</code>&#xFF0C;<code>7788</code>&#x7AEF;&#x53E3;&#x4E0A;&#x5F00;&#x542F;3&#x4E2A;&#x5B9E;&#x4F8B;&#xFF1A;</p>
+<pre><code># &#x9ED8;&#x8BA4;&#x7AEF;&#x53E3;8899&#xFF0C;&#x7CFB;&#x7EDF;&#x9ED8;&#x8BA4;&#x5B58;&#x50A8;&#x76EE;&#x5F55;
+w2 start
+
+# &#x7AEF;&#x53E3;&#x53F7;&#x4E3A;8888&#xFF0C;&#x5B58;&#x50A8;&#x76EE;&#x5F55;&#x4E3A;8888&#xFF0C;&#x5E76;&#x628A;&#x7CFB;&#x7EDF;&#x9ED8;&#x8BA4;&#x76EE;&#x5F55;&#x7684;&#x914D;&#x7F6E;copy&#x5230;8888&#x76EE;&#x5F55;
+w2 start -S 8888 -C
+
+# &#x7AEF;&#x53E3;&#x53F7;&#x4E3A;7788&#xFF0C;&#x5B58;&#x50A8;&#x76EE;&#x5F55;&#x4E3A;7788&#xFF0C;&#x5E76;&#x628A;8888&#x76EE;&#x5F55;&#x7684;&#x914D;&#x7F6E;copy&#x5230;7788&#x76EE;&#x5F55;
+w2 start -S 7788 -C 8888
+</code></pre><p><em>Note: &#x4E0D;&#x540C;&#x5B9E;&#x4F8B;&#x8981;&#x914D;&#x7F6E;&#x4E0D;&#x540C;&#x7684;&#x4EE3;&#x7406;</em></p>
 <p>&#x81F3;&#x6B64;&#xFF0C;whistle&#x5DF2;&#x7ECF;&#x5B89;&#x88C5;&#x5B8C;&#x6BD5;&#xFF0C;&#x53EF;&#x4EE5;&#x5F00;&#x59CB;&#x4F7F;&#x7528;&#x4E86;&#x3002;</p>
 
                     
