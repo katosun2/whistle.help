@@ -62,7 +62,7 @@ whistle安装完成后，执行命令 `whistle help` 或 `w2 help`，查看whist
 	    -n, --username [username]                       login username
 	    -w, --password [password]                       login password
 	    -S, --storage [newStorageDir]                   the new local storage directory
-    	 -C, --copy [storageDir]                         copy storageDir to newStorageDir
+    	-C, --copy [storageDir]                         copy storageDir to newStorageDir
 	    -p, --port [port]                               whistle port(8899 by default)
 	    -m, --middlewares [script path or module name]  express middlewares path (as: xx,yy/zz.js)
 	    -u, --uipath [script path]                      web ui plugin path
