@@ -6,6 +6,7 @@
 * [手动更新](update.md)
 * [界面操作](webui/README.md)
 	* [Network](webui/network.md)
+	* [Log](webui/log.md)
 	* [Rules](webui/rules.md)
 	* [Values](webui/values.md)
 	* [Plugins](webui/plugins.md)
