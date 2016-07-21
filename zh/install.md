@@ -61,6 +61,9 @@ whistle安装完成后，执行命令 `whistle help` 或 `w2 help`，查看whist
 	    -d, --debug                                     debug mode
 	    -n, --username [username]                       login username
 	    -w, --password [password]                       login password
+	    -r, --rules [newRulesDir]                       the dirname of rules(rules by default)
+    	-v, --values [newValuesDir]                     the dirname of values(values by default)
+    	-c, --copy [copy]                               copy rulesDir|valuesDir to newRulesDir&newValuesDir(rules|values by default)
 	    -p, --port [port]                               whistle port(8899 by default)
 	    -m, --middlewares [script path or module name]  express middlewares path (as: xx,yy/zz.js)
 	    -u, --uipath [script path]                      web ui plugin path
@@ -135,13 +138,13 @@ whistle安装完成后，执行命令 `whistle help` 或 `w2 help`，查看whist
 1. 切换到不同的系统用户，在每个系统用户启动一个whistle代理服务(每个服务的端口号可以用命令行参数`w2 start -p xxxx`来指定)
 2. 也可以通过切换规则目录和端口号的方式来解决
 
-		w2 start -r newRulesDir -p newPort
+		w2 start -r newRulesDir -v newValuesDir -p newPort
 		
 		# -c表示把rules目录下的规则拷贝的新目录
-		w2 start -r newRulesDir -c -p newPort
+		w2 start -r newRulesDir -v newValuesDir -c -p newPort
 		
 		# 也可以指定要拷贝的目录
-		w2 start -r newRulesDir -c existingRulesDir -p newPort
+		w2 start -r newRulesDir -v newValuesDir -c existingRulesDir| existingValuesDir -p newPort
 		
 	*Note: 这种拷贝是覆盖式的，会替换原来的文件*
 		

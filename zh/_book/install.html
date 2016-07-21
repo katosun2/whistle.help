@@ -53,7 +53,7 @@
         data-chapter-title="安装配置"
         data-filepath="install.md"
         data-basepath="."
-        data-revision="Thu Jul 21 2016 14:46:10 GMT+0800 (CST)"
+        data-revision="Thu Jul 21 2016 15:18:29 GMT+0800 (CST)"
         data-innerlanguage="">
     
 
@@ -1442,6 +1442,9 @@ v4.4.0
     -d, --debug                                     debug mode
     -n, --username [username]                       login username
     -w, --password [password]                       login password
+    -r, --rules [newRulesDir]                       the dirname of rules(rules by default)
+    -v, --values [newValuesDir]                     the dirname of values(values by default)
+    -c, --copy [copy]                               copy rulesDir|valuesDir to newRulesDir&amp;newValuesDir(rules|values by default)
     -p, --port [port]                               whistle port(8899 by default)
     -m, --middlewares [script path or module name]  express middlewares path (as: xx,yy/zz.js)
     -u, --uipath [script path]                      web ui plugin path
@@ -1494,13 +1497,13 @@ v4.4.0
 <ol>
 <li>&#x5207;&#x6362;&#x5230;&#x4E0D;&#x540C;&#x7684;&#x7CFB;&#x7EDF;&#x7528;&#x6237;&#xFF0C;&#x5728;&#x6BCF;&#x4E2A;&#x7CFB;&#x7EDF;&#x7528;&#x6237;&#x542F;&#x52A8;&#x4E00;&#x4E2A;whistle&#x4EE3;&#x7406;&#x670D;&#x52A1;(&#x6BCF;&#x4E2A;&#x670D;&#x52A1;&#x7684;&#x7AEF;&#x53E3;&#x53F7;&#x53EF;&#x4EE5;&#x7528;&#x547D;&#x4EE4;&#x884C;&#x53C2;&#x6570;<code>w2 start -p xxxx</code>&#x6765;&#x6307;&#x5B9A;)</li>
 <li><p>&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5207;&#x6362;&#x89C4;&#x5219;&#x76EE;&#x5F55;&#x548C;&#x7AEF;&#x53E3;&#x53F7;&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x89E3;&#x51B3;</p>
-<pre><code> w2 start -r newRulesDir -p newPort
+<pre><code> w2 start -r newRulesDir -v newValuesDir -p newPort
 
  # -c&#x8868;&#x793A;&#x628A;rules&#x76EE;&#x5F55;&#x4E0B;&#x7684;&#x89C4;&#x5219;&#x62F7;&#x8D1D;&#x7684;&#x65B0;&#x76EE;&#x5F55;
- w2 start -r newRulesDir -c -p newPort
+ w2 start -r newRulesDir -v newValuesDir -c -p newPort
 
  # &#x4E5F;&#x53EF;&#x4EE5;&#x6307;&#x5B9A;&#x8981;&#x62F7;&#x8D1D;&#x7684;&#x76EE;&#x5F55;
- w2 start -r newRulesDir -c existingRulesDir -p newPort
+ w2 start -r newRulesDir -v newValuesDir -c existingRulesDir| existingValuesDir -p newPort
 </code></pre><p> <em>Note: &#x8FD9;&#x79CD;&#x62F7;&#x8D1D;&#x662F;&#x8986;&#x76D6;&#x5F0F;&#x7684;&#xFF0C;&#x4F1A;&#x66FF;&#x6362;&#x539F;&#x6765;&#x7684;&#x6587;&#x4EF6;</em></p>
 </li>
 </ol>
