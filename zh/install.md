@@ -145,7 +145,7 @@ whistle安装完成后，执行命令 `whistle help` 或 `w2 help`，查看whist
 		# 也可以指定要拷贝的目录
 		w2 start -S newStorageDir -c storageDir -p newPort
 		
-	*Note: 这种拷贝是覆盖式的，会替换原来的文件*
+	*Note: 这种拷贝是覆盖式的，会替换目标目录里面原有文件，启动时设置了新的存储目录，关闭或重启时也要把目录参数带上(端口号不要带上)：`w2 stop -S newStorageDir`或`w2 restart -S newStorageDir`*
 		
 
 
