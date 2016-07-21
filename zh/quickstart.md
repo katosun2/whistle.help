@@ -41,3 +41,15 @@
 	
 		# www.ifeng.com 127.0.0.1
 		www.ifeng.com host://127.0.0.1:8080
+		
+2. 修改请求方法
+
+	
+	
+		
+3. 注入html、js、css
+
+
+
+
+更多功能请参考：[协议列表](rules/index.html)

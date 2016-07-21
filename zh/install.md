@@ -121,6 +121,8 @@ whistle安装完成后，执行命令 `whistle help` 或 `w2 help`，查看whist
 
 	2) 安装firefox代理插件： [Proxy Selector](https://addons.mozilla.org/zh-cn/firefox/addon/proxy-selector/)
 	
+3. 移动端只需在设置中配置当前Wifi的代理即可
+	
 
 ### 访问配置页面
 启动whistle及配置完代理后，用**Chrome浏览器(由于css兼容性问题界面只支持Chrome浏览器)**访问配置页面 [http://local.whistlejs.com/](http://local.whistlejs.com/)，如果能正常打开页面，whistle安装启动完毕，可以开始使用。
