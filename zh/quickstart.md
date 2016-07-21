@@ -5,7 +5,7 @@
 
 点击页面上方菜单栏的`Create`按钮，新建一个名为`test`的分组，并按下面例子输入对应的规则配置。
 
-> whistle支持域名、路径、正则三种[匹配方式](pattern.html)，如果不[开启HTTPS拦截](webui/https.html)，whistle无法获取请求的完整路径，对这部分请求只有域名匹配能完整支持，为了让规则对所有请求都生效请先[开启HTTPS拦截](webui/https.html)
+> whistle支持域名、路径、正则三种[匹配方式](pattern.html)，如果不[开启HTTPS拦截](webui/https.html)，whistle无法获取请求的完整的请求url，对这部分请求只有域名匹配能完整支持，为了让规则对所有请求都生效请先[开启HTTPS拦截](webui/https.html)
 
 1. 设置hosts
 
@@ -31,7 +31,7 @@
 		
 	*其中，pattern请参考[匹配方式](pattern.html)*
 		
-	例子：
+	**例子：**
 	
 	指定[www.ifeng.com](http://www.ifeng.com/)的ip:
 	
@@ -42,14 +42,10 @@
 		# www.ifeng.com 127.0.0.1
 		www.ifeng.com host://127.0.0.1:8080
 		
-2. 修改请求方法
+2. 替换本地文件
+3. 请求转发		
+4. 注入html、js、css
+5. 调试远程页面
 
 	
-	
-		
-3. 注入html、js、css
-
-
-
-
 更多功能请参考：[协议列表](rules/index.html)

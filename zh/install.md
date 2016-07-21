@@ -106,7 +106,7 @@ whistle安装完成后，执行命令 `whistle help` 或 `w2 help`，查看whist
 
 3. 勾选上 **对所有协议均使用相同的代理服务器**
 
-######两种代理配置方式(任选其中一个，并把上面配置信息配置上即可)：
+######代理配置方式(把上面配置信息配置上即可)：
 
 1. 直接配置系统代理：　
 
@@ -121,13 +121,30 @@ whistle安装完成后，执行命令 `whistle help` 或 `w2 help`，查看whist
 
 	2) 安装firefox代理插件： [Proxy Selector](https://addons.mozilla.org/zh-cn/firefox/addon/proxy-selector/)
 	
-3. 移动端只需在设置中配置当前Wifi的代理即可
+3. 移动端需要在`设置`中配置当前Wifi的代理
 	
 
 ### 访问配置页面
 启动whistle及配置完代理后，用**Chrome浏览器(由于css兼容性问题界面只支持Chrome浏览器)**访问配置页面 [http://local.whistlejs.com/](http://local.whistlejs.com/)，如果能正常打开页面，whistle安装启动完毕，可以开始使用。
 
 *Note: 也支持直接用ip访问配置页面： [http://whistleServerIP:whistlePort+1/](http://127.0.0.1:8900)*
+
+### 启动多个whistle
+如果你想在同一台机器启动多个whistle，方便多个浏览器或者供多人使用，有两种方式：
+
+1. 切换到不同的系统用户，在每个系统用户启动一个whistle代理服务(每个服务的端口号可以用命令行参数`w2 start -p xxxx`来指定)
+2. 也可以通过切换规则目录和端口号的方式来解决
+
+		w2 start -r newRulesDir -p newPort
+		
+		# -c表示把rules目录下的规则拷贝的新目录
+		w2 start -r newRulesDir -c -p newPort
+		
+		# 也可以指定要拷贝的目录
+		w2 start -r newRulesDir -c existingRulesDir -p newPort
+		
+	*Note: 这种拷贝是覆盖式的，会替换原来的文件*
+		
 
 
 至此，whistle已经安装完毕，可以开始使用了。
