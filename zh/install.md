@@ -61,9 +61,8 @@ whistle安装完成后，执行命令 `whistle help` 或 `w2 help`，查看whist
 	    -d, --debug                                     debug mode
 	    -n, --username [username]                       login username
 	    -w, --password [password]                       login password
-	    -r, --rules [newRulesDir]                       the dirname of rules(rules by default)
-    	-v, --values [newValuesDir]                     the dirname of values(values by default)
-    	-c, --copy [copy]                               copy rulesDir|valuesDir to newRulesDir&newValuesDir(rules|values by default)
+	    -S, --storage [newStorageDir]                   the new local storage directory
+    	 -C, --copy [storageDir]                         copy storageDir to newStorageDir
 	    -p, --port [port]                               whistle port(8899 by default)
 	    -m, --middlewares [script path or module name]  express middlewares path (as: xx,yy/zz.js)
 	    -u, --uipath [script path]                      web ui plugin path
