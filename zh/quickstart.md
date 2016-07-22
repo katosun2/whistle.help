@@ -5,7 +5,7 @@
 
 点击页面上方菜单栏的`Create`按钮，新建一个名为`test`的分组，并按下面例子输入对应的规则配置。
 
-> whistle支持域名、路径、正则三种[匹配方式](pattern.html)，如果不[开启HTTPS拦截](webui/https.html)，whistle无法获取请求的完整的请求url，对这部分请求只有域名匹配能完整支持，为了让规则对所有请求都生效请先[开启HTTPS拦截](webui/https.html)
+> whistle支持域名、路径、正则三种[匹配方式](pattern.html)，如果不[开启HTTPS拦截](webui/https.html)，whistle无法获取请求的完整url，对这部分请求只有域名匹配能完整支持，为了让规则对所有请求都生效请先[开启HTTPS拦截](webui/https.html)
 
 1. 设置hosts
 

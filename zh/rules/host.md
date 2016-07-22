@@ -22,7 +22,7 @@ host的配置模式：
 		host://ip:port pattern
 		
 		# 组合模式
-		pattern ip1 ipN host://ip:port operator-uri1 operator-uriN
+		pattern ip1 operator-uri1 operator-uriN
 		host://ip:port pattern1 pattern2 patternN
 		
 	
