@@ -41,4 +41,4 @@ whistle有以下三种匹配模式：
 		# 这种情况下也支持一个操作对应多个pattern
 		operator-uri pattern1 pattern2 patternN
 		
-其中，pattern请参加：[匹配方式](pattern.html)
+其中，pattern请参考：[匹配方式](pattern.html)

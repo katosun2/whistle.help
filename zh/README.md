@@ -11,11 +11,11 @@ whistle又是如何把操作的URI协议及其参数合成一个操作URI？首�
 	
 		pattern protocol://value
 		
-	由于uri里面不能有空白字符，如果value有空白字符，可以把value存在whistle的key-value系统Values，然后通过`pattern protocol://{key}`的方式传值，whistle会自动到Values里面加载`key`对应的值(如果value对应的是本地文件路径可以用`%20`替换空格)。
+	由于uri里面不能有空白字符，如果value有空白字符，可以把value存在whistle的key:value系统Values，然后通过`pattern protocol://{key}`的方式传值，whistle会自动到Values里面加载`key`对应的值(如果value对应的是本地文件路径可以用`%20`替换空格)。
 
 2. 多参数的情形
 
-	所谓多参数的操作类型指操作可以传人大于1个参数的情形，如：添加或修改请求响应头部字段。对这类型操作，需要传人一个`key-value`集合给whistle(whistle内部把这个集合转成一个JSON对象)，whistle采用把操作协议和`key-value`集合合成一个URI:
+	所谓多参数的操作类型指操作可以传人大于1个参数的情形，如：添加或修改请求响应头部字段。对这类型操作，需要传人一个`key:value`集合给whistle(whistle内部把这个集合转成一个JSON对象)，whistle采用把操作协议和`key:value`集合合成一个URI:
 	
 	- 请求参数的模式
 
@@ -27,11 +27,11 @@ whistle又是如何把操作的URI协议及其参数合成一个操作URI？首�
 
 			pattern protocol://({"key1":"value1","key2":"value2","keyN":"valueN"})
 			
-		这种情况下`key-value`不能空白字符。
+		这种情况下`key:value`不能空白字符。
 		
 	- 通用方式
 
-		对这类型操作whistle支持把`key-value`存放在whistle的Values系统或者本地文件里面
+		对这类型操作whistle支持把`key:value`存放在whistle的Values系统或者本地文件里面
 		
 			# 存放在whistle的Values里面
 			pattern protocol://{key}
@@ -44,7 +44,7 @@ whistle又是如何把操作的URI协议及其参数合成一个操作URI？首�
 			# 存放在非Windows系统的文件里面
 			pattern protocol:///xxx
 			
-		`key-value`在这些系统里面可以采用如下3种格式描述：
+		`key:value`在这些系统里面可以采用如下3种格式描述：
 		
 		- 请求参数格式
 
