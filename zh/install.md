@@ -162,7 +162,7 @@ whistle安装完成后，执行命令 `whistle help` 或 `w2 help`，查看whist
 *Note: 不同实例要配置不同的代理*
 
 
-至此，whistle已经安装完毕，可以开始使用了。
+
 
 
 
