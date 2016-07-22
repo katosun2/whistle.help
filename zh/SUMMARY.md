@@ -3,7 +3,7 @@
 * [快速上手](quickstart.md)
 * [配置模式](config.md)
 * [匹配方式](pattern.md)
-* [数据格式](params.md)
+* [数据格式](data.md)
 * [手动更新](update.md)
 * [界面操作](webui/README.md)
 	* [Network](webui/network.md)
