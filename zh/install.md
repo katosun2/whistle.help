@@ -1,4 +1,4 @@
-# 安装whistle
+# 安装配置
 安装启动whistle，需要以下四个步骤： **安装node**、**安装whistle**、**启动whistle**、**配置代理**。
 
 ### 安装node
