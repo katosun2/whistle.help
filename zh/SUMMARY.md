@@ -8,7 +8,7 @@
 * [插件开发](plugins.md)
 * [界面操作](webui/README.md)
 	* [Network](webui/network.md)
-	* [Componser](webui/composer.md)
+	* [Composer](webui/composer.md)
 	* [Log](webui/log.md)
 	* [Rules](webui/rules.md)
 	* [Values](webui/values.md)
