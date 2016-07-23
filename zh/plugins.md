@@ -16,6 +16,8 @@ whistle的时序图：
 
 ![whistle的时序图](img/seq.png)
 
+### 编写插件
+
 whistle插件目录结构：
 
 	whistle.xxx
@@ -114,6 +116,85 @@ whistle插件目录结构：
 		}
 		
 whistle插件的每部分都可以独立存在，各个部分的关系及与whistle的关系可以看时序图，也可以参考其它参加的实现方式：[https://github.com/whistle-plugins](https://github.com/whistle-plugins)，[whistle.helloworld](https://github.com/whistle-plugins/whistle.helloworld)
+
+### 调试插件
+
+把本地node模块link到全局目录：
+
+	$ npm link
+	或 sudo npm link
+	
+	# 开启whistle的调试模式
+	$ w2 run
+	
+这样whistle会自动加载改插件，如果插件有代码更新，需要触发修改package.json这个文件，比如加个空格，或者直接加个字段，每次修改下这个字段，whistle会检查package.json是否有更改，如果更改的话会自动重启。
+
+卸载本地插件：
+
+	npm unlink
+	# 或 sudo npm unlink
+
+	# 如果npm link不是在模块所在根目录执行，可以采用下面这种方式卸载本地开发的全局模块
+	npm unlink whistle.xxx -g
+	# 或 sudo npm unlink whistle.xxx -g
+
+### 发布插件
+同发布正常的node模块，模块编写完毕，可以通过以下几种方式发布：
+
+1. 公共的node模块，直接上传到npm仓库：
+
+		# 登陆npm login后，在模块的根目录(package.json所在目录)执行
+		npm publish
+
+2. 自建的npm仓库，有些公司会自建自己的仓库
+		
+		xnpm publish
+		
+### 安装插件
+同安装全局的node模块，只需直接通过npm安装，需要安装到全局
+
+	npm install -g whistle.protocol
+	# 或
+	xnpm install -g whistle.protocol
+	# 或
+	xnpm install -g @org/whistle.protocol
+
+		
+### 更新插件
+可以通过直接重复上述安装插件的方式强制更新，直接通过npm更新:
+
+	npm update -g whistle.protocol
+	# 或
+	xnpm update -g whistle.protocol
+	# 或
+	xnpm update -g @org/whistle.protocol
+		
+	
+### 卸载插件
+
+
+	npm uninstall -g whistle.protocol
+	# 或
+	xnpm uninstall -g whistle.protocol
+	# 或
+	xnpm uninstall -g @org/whistle.protocol
+
+
+
+### 使用插件
+安装完插件，直接可以在whistle中配置
+	
+	pattern   protocol://ruleValue
+                    
+	配置完以后whistle会自动把匹配到的请求转发到对应protocol的插件whistle.protocol上，并把ruleValue传给插件服务器   
+
+
+
+更多内容可以参考：
+
+1. [https://github.com/whistle-plugins/whistle.helloworld](https://github.com/whistle-plugins/whistle.helloworld)
+
+2. [https://github.com/whistle-plugins](https://github.com/whistle-plugins)
 
 
 
