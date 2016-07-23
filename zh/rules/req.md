@@ -3,5 +3,39 @@
 
 	pattern req://params
 	
+params为[Values](http://local.whistlejs.com/#values)里面的key或者本地文件，内容为:
+
+	{
+    "method": "post", //修改请求方法
+    "headers": { //修改请求头
+        "referer": "http://www.example.com/xxx"
+    },
+    "top": "preappend body", //请求内容前面添加的文本
+    "prepend": "/User/xxx/top.txt", //请求内容前面添加的文件路径
+    "body": "request body", //替换请求内容的文本
+    "replace": "/User/xxx/body.txt", //替换请求内容的文件路径
+    "bottom": "append body", //追加到请求内容后面的文本
+    "append": "/User/xxx/bottom.txt", //追加到请求内容后面的文件路径
+    "delay": 6000, //延迟请求的毫秒数
+    "speed": 20, //请求速度(单位：kb/s，千比特/每秒)
+    "timeout": 36000, //超时时间
+    "charset": "utf8" //请求内容编码
+}
+	
 pattern参见[匹配方式](../pattern.html)，更多模式请参考[匹配模式](../mode.html)。
+
+例子：
+
+把[www.ifeng.com](http://www.ifeng.com/)改成post请求，及referer改成`http://wproxy.org`
+
+	www.ifeng.com req://{test-req}
+	
+Values的`test-req`:
+
+	{
+	    "method": "post",
+	    "headers": {
+	        "referer": "http://wproxy.org"
+	    }
+    }
 
