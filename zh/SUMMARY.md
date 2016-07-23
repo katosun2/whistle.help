@@ -1,5 +1,5 @@
 * [概述](README.md)
-* [安装配置](install.md)
+* [安装启动](install.md)
 * [手动更新](update.md)
 * [快速上手](quickstart.md)
 * [配置模式](config.md)
