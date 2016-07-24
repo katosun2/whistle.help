@@ -3,9 +3,11 @@ tpl基本功能跟[file](file.html)一样可以做本地替换，但tpl内置了
 
 匹配模式：
 
-		pattern tpl://filepath
+	pattern tpl://filepath
+	# 也可以匹配一个文件或目录路径列表，whistle会依次查找直到找到存在的文件
+	pattern tpl://path1|path2|pathN
 		
-filepath为[Values](http://local.whistlejs.com/#values)里面的key或者本地文件。
+filepath为[Values](http://local.whistlejs.com/#values)里面的{key}或者本地文件。
 
 
 例子：

@@ -6,15 +6,15 @@
 	# 也可以匹配一个文件或目录路径列表，whistle会依次查找直到找到存在的文件
 	pattern file://path1|path2|pathN
 	
-filepath为[Values](http://local.whistlejs.com/#values)里面的key或者本地文件，pattern参见[匹配方式](../pattern.html)，更多模式请参考[匹配模式](../mode.html)。
+filepath为[Values](http://local.whistlejs.com/#values)里面的{key}或者本地文件，pattern参见[匹配方式](../pattern.html)，更多模式请参考[匹配模式](../mode.html)。
 
 如果pattern为域名或路径，whistle会自动根据请求url后面剩余的路径跟filepath自动补全，即：
 
-		www.test.com/abc file://filpath
+	www.test.com/abc file://filpath
 		
 则请求`http://www.test.com/abc/index.html`会替换本地的`filepath/index.html`文件，如果不想自动补全可以使用操作符`<>`：
 
-		www.test.com/abc file://<filepath>
+	www.test.com/abc file://<filepath>
 		
 这样所有`www.test.com/abc`的子路径都会被`filepath`替换掉，这种情况也可以用正则匹配解决。
 

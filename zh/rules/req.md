@@ -5,7 +5,7 @@
 
 	pattern req://params
 	
-params为[Values](http://local.whistlejs.com/#values)里面的key或者本地文件，内容为:
+params为[Values](http://local.whistlejs.com/#values)里面的{key}或者本地文件，内容为:
 
 	{
 	    "method": "post", //修改请求方法
