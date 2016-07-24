@@ -1,0 +1,17 @@
+# tpl
+tpl基本功能跟[file](file.html)一样可以做本地替换，但tpl内置了一个简单的模板引擎，可以把文件内容里面`{name}`替换请求参数对应的字段(如果不存在对应的自动则不会进行替换)，一般可用于mock jsonp的请求。
+
+匹配模式：
+
+		pattern tpl://filepath
+		
+filepath为[Values](http://local.whistlejs.com/#values)里面的key或者本地文件。
+
+
+例子：
+
+		/\.jsonp/i  xfile://{test.json}
+		
+test.json:
+
+		{callback}({ec: 0})
