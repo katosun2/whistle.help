@@ -19,7 +19,7 @@
 7. [**log** (打印网页js错误或者调试信息)](log.html)
 8. [**exports** (导出请求数据到指定文件)](exports.html)
 8. [**exportsUrl** (把请求的url列表按顺序导出到指定文件)](exportsUrl.html)
-9. [**hostname** (把请求的host字段)](hostname.html)
+9. [**hostname** (修改请求头部的host字段)](hostname.html)
 8. [**referer** (修改请求referer)](referer.html)
 9. [**auth** (修改请求用户名密码)](auth.html)
 10. [**ua** (修改请求user-agent)](ua.html)

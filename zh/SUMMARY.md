@@ -39,6 +39,7 @@
 	* [log](rules/log.md)
 	* [exports](rules/exports.md)
 	* [exportsUrl](rules/exportsUrl.md)
+	* [hostname](rules/hostname.md)
 	* [referer](rules/referer.md)
 	* [auth](rules/auth.md)
 	* [ua](rules/ua.md)
