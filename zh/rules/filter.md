@@ -1,10 +1,10 @@
 # filter
 
-用来过滤设置的操作，还有可以开启拦截HTTPS及隐藏请求，匹配模式：
+用来过滤设置的操作，还有可以开启拦截HTTPS及隐藏请求，配置模式：
 
 	pattern filetr://operator1|operator2|operatorN
 	
-pattern参见[匹配方式](../pattern.html)，更多模式请参考[匹配模式](../mode.html)。
+pattern参见[匹配方式](../pattern.html)，更多模式请参考[配置模式](../mode.html)。
 
 例子：
 

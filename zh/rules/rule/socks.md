@@ -1,10 +1,10 @@
 # socks
 
-设置socks代理，匹配模式：
+设置socks代理，配置模式：
 
 	pattern socks://ip:port
 	
-pattern参见[匹配方式](../pattern.html)，更多模式请参考[匹配模式](../mode.html)。
+pattern参见[匹配方式](../pattern.html)，更多模式请参考[配置模式](../mode.html)。
 
 
 例子：

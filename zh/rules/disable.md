@@ -1,11 +1,11 @@
 # disable
 用来禁用cache、cookie、ua、referer、csp、timeout、301、intercept、dnsCache、keepAlive等HTTP(s)请求的一些基本功能。
 
-匹配模式：
+配置模式：
 
 	pattern disable://operator1|operator2|operatorN
 	
-pattern参见[匹配方式](../pattern.html)，更多模式请参考[匹配模式](../mode.html)。
+pattern参见[匹配方式](../pattern.html)，更多模式请参考[配置模式](../mode.html)。
 
 例子：
 
