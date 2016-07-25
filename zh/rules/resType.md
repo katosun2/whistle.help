@@ -7,9 +7,10 @@ pattern参见[匹配方式](../pattern.html)，更多模式请参考[配置模�
 
 	json: application/json
 	xml: text/xml
+	js: text/javascript
 	txt: text/plain
 	html: text/html
-
+等等
 	
 例子：
 
