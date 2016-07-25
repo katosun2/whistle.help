@@ -1,6 +1,6 @@
 # params
 
-修改请求参数，配置模式：
+修改请求参数或表单参数，配置模式：
 
 	pattern params://filepath
 	

@@ -48,6 +48,7 @@
 	* [dispatch](rules/dispatch.md)
 	* [params](rules/params.md)
 	* [statusCode](rules/statusCode.md)
+	* [replaceStatus](rules/replaceStatus.md)
 	* [redirect](rules/redirect.md)
 	* [method](rules/method.md)
 	* [cache](rules/cache.md)
