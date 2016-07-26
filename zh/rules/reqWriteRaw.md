@@ -10,3 +10,9 @@ filepath为本地目录或文件，pattern参见[匹配方式](../pattern.html)�
 	# 匹配http://www.ifeng.com/，指定特定的文件
 	/^http:\/\/www.ifeng.com\/$/ reqWriteRaw:///User/test/index.html
 	www.ifeng.com reqWriteRaw:///User/test
+	
+确保`/User/test/index.html`不存在，也可以这样：
+
+	www.ifeng.com reqWrite:///User/test/index.html
+	
+这样whistle会创建一个文件`/User/test/index.html`及目录`/User/test/index.html`
