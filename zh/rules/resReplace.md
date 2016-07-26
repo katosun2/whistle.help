@@ -19,4 +19,4 @@ pattern参见[匹配方式](../pattern.html)，更多模式请参考[配置模�
 test-resReplace.json:
 
 	/user=([^&])/ig: user=$1$1
-	str: replacement
+	<script: <script crossorigin
