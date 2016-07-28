@@ -57,8 +57,7 @@
 		www.ifeng.com js://E:\xx\test\test.js
 		www.ifeng.com css://E:\xx\test\test.css
 		
-	所有www.ifeng.com域名下的请求，whistle都会根据响应类型，将处理好的文本注入到响应内容里面。
-	如是html请求，js和css会分别自动加上`script`和`style`标签后追加到内容后面。
+	所有www.ifeng.com域名下的请求，whistle都会根据响应类型，将处理好的文本注入到响应内容里面，如是html请求，js和css会分别自动加上`script`和`style`标签后追加到内容后面。
 
 
 5. 调试远程页面
