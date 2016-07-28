@@ -11,7 +11,6 @@
 	# 或
 	$ npm update -g whistle --registry=https://registry.npm.taobao.org
 	
-	
 更新成功后，重启 `whistle` ：
 
 	$ w2 restart
