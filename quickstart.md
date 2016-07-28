@@ -50,7 +50,6 @@
 		www.ifeng.com html:///User/xxx/test/test.html
 		www.ifeng.com js:///User/xxx/test/test.js
 		www.ifeng.com css:///User/xxx/test/test.css
-		
 				
 		# Windows的路径分隔符可以用`\`和`/`
 		www.ifeng.com html://E:\xx\test\test.html
