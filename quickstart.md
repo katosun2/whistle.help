@@ -7,7 +7,6 @@
 
 1. 设置hosts
 
-	
 	指定[www.ifeng.com](http://www.ifeng.com/)的ip:
 	
 		www.ifeng.com 127.0.0.1
