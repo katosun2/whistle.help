@@ -6,7 +6,7 @@
 * [匹配方式](pattern.md)
 * [数据格式](data.md)
 * [插件开发](plugins.md)
-* [界面操作](webui/README.md)
+* [界面功能](webui/README.md)
 	* [Network](webui/network.md)
 	* [Composer](webui/composer.md)
 	* [Log](webui/log.md)
