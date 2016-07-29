@@ -15,8 +15,6 @@
 	* [Plugins](webui/plugins.md)
 	* [Weinre](webui/weinre.md)
 	* [Https](webui/https.md)
-	* [Help](webui/help.md)
-	* [About](webui/about.md)
 	* [Online](webui/online.md)
 * [协议列表](rules/README.md)
 	* [host](rules/host.md)
