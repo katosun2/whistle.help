@@ -30,7 +30,7 @@
 	
 	http://www.ifeng.com/xxx会先尝试加载`/User/xxx/test/xxx`这个文件，如果不存在，则会加载`/User/xxx/test/index.html/xxx`，如果没有对应的文件则返回404。
 	
-	也可以替换jsonp请求，具体参见[tpl](rules/tpl.html)
+	也可以替换jsonp请求，具体参见[tpl](rules/rule/tpl.html)
 
 3. 请求转发		
 	
