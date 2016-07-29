@@ -12,7 +12,7 @@ filepath为[Values](http://local.whistlejs.com/#values)里面的{key}或者本�
 
 例子：
 
-		/\.jsonp/i  xfile://{test.json}
+		/\.jsonp/i  tpl://{test.json}
 		
 test.json:
 
