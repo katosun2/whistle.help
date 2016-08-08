@@ -121,6 +121,8 @@ whistle安装完成后，执行命令 `whistle help` 或 `w2 help`，查看whist
 	2) 安装firefox代理插件： [Proxy Selector](https://addons.mozilla.org/zh-cn/firefox/addon/proxy-selector/)
 	
 3. 移动端需要在`设置`中配置当前Wifi的代理
+
+PS: 如果配置完代理，手机无法访问，可能是whistle所在的电脑防火墙限制了远程访问whistle的端口，关闭防火墙或者设置白名单：[ http://jingyan.baidu.com/article/870c6fc317cae7b03ee4be48.html]( http://jingyan.baidu.com/article/870c6fc317cae7b03ee4be48.html)
 	
 
 ### 访问配置页面
