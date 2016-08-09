@@ -109,8 +109,7 @@ whistle安装完成后，执行命令 `whistle help` 或 `w2 help`，查看whist
 
 1. 直接配置系统代理：　
 
-
-	1) [Windows](http://jingyan.baidu.com/article/0aa22375866c8988cc0d648c.html) 
+  1) [Windows](http://jingyan.baidu.com/article/0aa22375866c8988cc0d648c.html) 
 
 	2) [Mac](http://jingyan.baidu.com/article/a378c960849144b3282830dc.html)
 
