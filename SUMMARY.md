@@ -72,6 +72,7 @@
 	* [resBody](rules/resBody.md)
 	* [reqAppend](rules/reqAppend.md)
 	* [resAppend](rules/resAppend.md)
+	* [urlReplace](rules/urlReplace.md)
 	* [reqReplace](rules/reqReplace.md)
 	* [resReplace](rules/resReplace.md)
 	* [reqWrite](rules/reqWrite.md)

@@ -55,6 +55,7 @@
 32. [**resBody** (替换响应内容)](resBody.html)
 33. [**reqAppend** (往请求内容后面追加数据)](reqAppend.html)
 34. [**resAppend** (往响应内容后面追加数据)](resAppend.html)
+35. [**urlReplace** (通过正则或字符串替换请求url，类似str.replace)](urlReplace.html)
 35. [**reqReplace** (通过正则或字符串替换请求文本内容，类似str.replace)](reqReplace.html)
 36. [**resReplace** (通过正则或字符串替换响应文本内容，类似str.replace)](resReplace.html)
 35. [**reqWrite** (将请求内容写入指定的文件)](reqWrite.html)
