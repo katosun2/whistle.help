@@ -82,5 +82,5 @@
 	* [css](rules/css.md)
 	* [html](rules/html.md)
 	* [js](rules/js.md)
-* [一些疑问](problems.md)
+* [常见问题](questions.md)
 * [用户反馈](feedback.md)
