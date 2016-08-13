@@ -5,6 +5,9 @@
 	pattern http://host:port:/xxx
 	pattern https://host:port:/xxx
 	
+	# 与请求的协议一样
+	pattern host:port:/xxx
+	
 其中，pattern参见[匹配方式](../pattern.html)，更多模式请参考[配置模式](../mode.html)。
 
 例子：
