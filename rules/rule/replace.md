@@ -4,10 +4,8 @@
 
 	pattern http://host:port:/xxx
 	pattern https://host:port:/xxx
-	pattern ws://host:port:/xxx
-	pattern wss://host:port:/xxx
 	
-其中，ws[s]和http[s]的请求不能相互替换，pattern参见[匹配方式](../pattern.html)，更多模式请参考[配置模式](../mode.html)。
+其中，pattern参见[匹配方式](../pattern.html)，更多模式请参考[配置模式](../mode.html)。
 
 例子：
 
