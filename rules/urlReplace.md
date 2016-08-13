@@ -13,7 +13,7 @@ pattern参见[匹配方式](../pattern.html)，更多模式请参考[配置模�
 
 例子：
 
-	www.ifeng.com rurlReplace://{test-resReplace.json}
+	www.ifeng.com urlReplace://{test-resReplace.json}
 	
 
 test-urlReplace.json:
