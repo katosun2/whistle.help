@@ -21,3 +21,29 @@
 5. 如何查看错误信息？
 
 	如果是请求出错，可以在Network里面的Request或Response的Text里面看到，有些请求会把异常作为响应内容直接输出到界面；如果是内部运行出现的非致命性异常，可以在Network -> Log -> Server里面看到；如果是导致程序crash的异常，日志信息会写在命令行启动的目录的`whistle.log`文件。
+	
+6. 如何在一台机器同时启多个whistle？
+
+	可以通过设置不同端口号及不同存储目录来启动不同whistle实例，具体参考[安装启动](install.html)。
+	
+7. 如何实现反向代理的功能？
+
+	启动whistle时设置监听的端口为80:
+	
+		w2 start -p 80
+		
+		#或
+		w2 restart -p 80
+		
+	如果要同时支持https需要在443端口上启一个：
+		
+		w2 start -p 443 -S
+		
+	非root用户需要加`sudo w2 start -p 80`。
+		
+	根据域名、或路径、或正则表达式配置带端口的host：
+	
+		www.test1.com host://127.0.0.1:8080
+		www.test2.com host://127.0.0.1:8181
+		
+	这样访问`www.test1.com`或`www.test2.com`的请求会自动转到8080或8181端口，实现无端口访问
