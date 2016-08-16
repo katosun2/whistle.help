@@ -98,19 +98,19 @@ whistle插件目录结构：
 - options
 
 		{
-			name: // ,
-			RULE_VALUE_HEADER: // ,
-			SSL_FLAG_HEADER: // ,
-			FULL_URL_HEADER: // ,
-			REAL_URL_HEADER: // ,
-			NEXT_RULE_HEADER: // ,
-			REQ_ID_HEADER: // ,
-			DATA_ID_HEADER: // ,
-			STATUS_CODE_HEADER: // ,
-			LOCAL_HOST_HEADER: // ,
-			HOST_PORT_HEADER: // ,
-			METHOD_HEADER: // ,
-			debugMode: // ,
+			name: // 插件的名称,
+			RULE_VALUE_HEADER: // 存储配置的规则值的请求头字段,
+			SSL_FLAG_HEADER: // 判断是否为HTTPS请求的请求头字段,
+			FULL_URL_HEADER: // 存储请求完整url的请求头字段,
+			REAL_URL_HEADER: // 存储配置映射到url的请求头字段,
+			NEXT_RULE_HEADER: // 存储配置的下个规则(第一规则为插件)的请求头字段,
+			REQ_ID_HEADER: // 请求的id，可以用于区分响应和请求是否同一个,
+			DATA_ID_HEADER: // 数据包对应的id，不一定存在,
+			STATUS_CODE_HEADER: // 配置的响应状态码,
+			LOCAL_HOST_HEADER: // 配置的hosts,
+			HOST_PORT_HEADER: // 配置的端口,
+			METHOD_HEADER: // 请求方法,
+			debugMode: // 是否是通过w2 run启动的,
 			config: // 包括whistle的端口号port等一系列whistle的配置,
 			storage: //提供本地存储的接口，用法参考：https://github.com/avwo/whistle/blob/master/lib/rules/util.js
 		}
