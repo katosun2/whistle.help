@@ -62,7 +62,7 @@ whistle插件目录结构：
 			*/
 		};
 
-- lib/rulesServer: 规则服务器，请求只要匹配了插件的协议规则`xxx://value`，就会把一些请求带放在头部请求该server，该server可以根据需要返回新的规则
+- lib/rulesServer: 规则服务器，请求只要匹配了插件的协议规则`xxx://value`(`xxx`为插件`whistle.xxx`的名称)，就会把一些请求带放在头部请求该server，该server可以根据需要返回新的规则
 
 		module.exports = function(server, options) {
 			/*
