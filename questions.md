@@ -48,7 +48,6 @@
 		
 	这样访问`www.test1.com`或`www.test2.com`的请求会自动转到8080或8181端口，实现无端口访问
 	
-	
 8. 如何让Rules支持多选？
 
 	在[Rules](webui/rules.html)界面中打开Settings对话框，选中`Allow multiple choice`即可。
