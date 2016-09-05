@@ -51,3 +51,10 @@
 8. 如何让Rules支持多选？
 
 	在[Rules](webui/rules.html)界面中打开Settings对话框，选中`Allow multiple choice`即可。
+	
+9. 如何动态设置Rules？
+
+  whistle支持以下两种方式动态设置：
+  
+  - 通过[dispatch](rules/dispatch.html)根据请求信息修改请求url的参数改变url，达到动态修改匹配规则的能力
+  - 通过[插件方式](plugins/index.html)的方式动态设置规则，这种方式更加直接，且功能更强大，基本上操作whistle的任何功能，且可以自定义协议功能
