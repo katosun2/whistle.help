@@ -1,5 +1,7 @@
 # 常见问题
 
+> 有问题可以提issue： [New issue](https://github.com/avwo/whistle/issues/new)
+
 1. 为什么[http://local.whistlejs.com](http://local.whistlejs.com/)无法访问？
 
 	没有启动whistle或者配置代理，具体操作请参考[安装启动](install.html)
