@@ -1,6 +1,6 @@
 # 匹配方式
 
-> HTTPS、Websocket需要[开启HTTPS拦截](webui/https.html)，whistle才能获取请求的完整的请求url，对这部分请求只有域名匹配能完整支持，为了让匹配方式对所有请求都生效请先[开启HTTPS拦截](webui/https.html)
+> HTTPS、Websocket需要[开启HTTPS拦截](webui/https.html)，whistle才能获取请求的完整的请求url，对这部分请求只有域名匹配能完整支持(路径匹配只支持`tunnel://host 或 tunnel://host:port`)，为了让匹配方式对所有请求都生效请先[开启HTTPS拦截](webui/https.html)
 
 whistle对所有操作支持域名、路径、正则三种匹配方式。
 
