@@ -1,5 +1,5 @@
 # disable
-用来禁用cache、cookie、ua、referer、csp、timeout、301、intercept、dnsCache、keepAlive等HTTP(s)请求的一些基本功能。
+用来禁用cache、cookie、ua、referer、csp、timeout、301、intercept、dnsCache、keepAlive等HTTP(s)请求的一些基本功能，也可以用来阻止通过HTTPS代理的请求 `filter://tunnel`。
 
 配置模式：
 
