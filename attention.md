@@ -1,5 +1,5 @@
 # 注意事项
-1. 没有[开启https拦截](webui/https.html)的https、websocket的请求或者通过HTTPS代理过来的socket请求，由于无法获取代理内容的协议或者本身代理内容没有协议，方便配置时区分，whistle把这些请求的协议看成`tunnel:`，所有这里请求只能支持域名匹配、正则匹配和形如下面的路径匹配：
+1. 没有[开启https拦截](webui/https.html)的https、websocket的请求或者通过HTTPS代理过来的socket请求，由于无法获取代理内容的协议或者本身代理内容没有协议，方便配置时区分，whistle把这些请求的协议看成`tunnel:`，所有这里请求只能支持[域名匹配、正则匹配](pattern.html)和形如下面的路径匹配：
 
 		tunnel://host operator-uri
 		tunnel://host/ operator-uri
