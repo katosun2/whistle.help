@@ -17,6 +17,7 @@
 6. [**filter** (过滤规则，隐藏请求等)](filter.html)
 6. [**disable** (禁用缓存、cookie等)](disable.html)
 7. [**log** (打印网页js错误或者调试信息)](log.html)
+7. [**plugin** (通过插件获取请求状态及设置新规则)](plugin.html)
 8. [**exports** (导出请求数据到指定文件)](exports.html)
 8. [**exportsUrl** (把请求的url列表按顺序导出到指定文件)](exportsUrl.html)
 9. [**hostname** (修改请求头部的host字段)](hostname.html)
