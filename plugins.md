@@ -27,6 +27,7 @@ whistle插件目录结构：
 		|__ index.js
 		|__ lib
 			  |__ uiServer.js
+			  |__ statusServer.js
 			  |__ rulesServer.js
 			  |__ server.js
 			  |__ resRulesServer.js
@@ -62,7 +63,18 @@ whistle插件目录结构：
 			*/
 		};
 
-- lib/rulesServer: 规则服务器，请求只要匹配了插件的协议规则`xxx://value`(`xxx`为插件`whistle.xxx`的名称)，就会把一些请求带放在头部请求该server，该server可以根据需要返回新的规则
+- lib/statusServer: 状态服务器，whistle会把请求的各种状态post过来，请求只要匹配了插件的协议规则`xxx://value或plugin://xxx(value)`(`xxx`为插件`whistle.xxx`的名称)
+
+		module.exports = function(server, options) {
+			/*
+			* options包含一些自定义的头部字段名称及配置信息，后面单独统一讲
+			* server是whistle传给插件的http.Server对象，
+			* 开发者通过监听server的request事件获取请求信息，
+			* 并返回新的规则
+			*/
+		};
+
+- lib/rulesServer: 规则服务器，请求只要匹配了插件的协议规则`xxx://value或plugin://xxx(value)`(`xxx`为插件`whistle.xxx`的名称)，就会把一些请求带放在头部请求该server，该server可以根据需要返回新的规则
 
 		module.exports = function(server, options) {
 			/*
