@@ -36,6 +36,7 @@
 	* [pac](rules/pac.md)
 	* [filter](rules/filter.md)
 	* [disable](rules/disable.md)
+	* [delete](rules/delete.md)
 	* [log](rules/log.md)
 	* [exports](rules/exports.md)
 	* [exportsUrl](rules/exportsUrl.md)
