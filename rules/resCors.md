@@ -14,6 +14,16 @@ filepath为[Values](http://local.whistlejs.com/#values)里面的{key}或者本�
 
 pattern参见[匹配方式](../pattern.html)，更多模式请参考[配置模式](../mode.html)，json格式参考[数据格式](../data.html)。
 
+一些特性且常用的情形可以用这种方式配置：
+
+	# `*` 表示设置 access-control-allow-origin: *
+	www.example.com resCors://*
+	
+	#  `enable` 表示设置 access-control-allow-origin: http://originHost
+	# 及access-control-allow-credentials: true
+	# 可用于script标签上设置为 `crossorigin=use-credentials`的情形
+	www.example.com resCors://enable
+
 例子：
 
 	www.ifeng.com resCors://{test-resCors.json}
