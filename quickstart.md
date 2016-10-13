@@ -10,11 +10,21 @@
 	指定[www.ifeng.com](http://www.ifeng.com/)的ip:
 	
 		www.ifeng.com 127.0.0.1
+		# 或
+		127.0.0.1 www.ifeng.com
 		
 	指定[www.ifeng.com](http://www.ifeng.com/)的ip和端口，把请求转发到本地8080端口，这个在平时开发中可以用来去掉url中的端口号:
 	
 		# www.ifeng.com 127.0.0.1
-		www.ifeng.com host://127.0.0.1:8080
+		www.ifeng.com 127.0.0.1:8080
+		# 或
+		127.0.0.1:8080 www.ifeng.com
+
+	也可以用某个域名的ip设置hosts
+		
+		www.ifeng.com host://www.qq.com:8080
+		# 或
+		host://www.qq.com:8080 www.ifeng.com
 		
 2. 本地替换
 	
@@ -38,11 +48,6 @@
 
 		www.ifeng.com www.aliexpress.com
 		
-	也可以用来去掉请求端口号：
-	
-		www.test.com 127.0.0.1:8080
-		
-	www.test.com的请求会自动转发到本地的8080端口，这个与配具有端口号的host的主要区别是前者会修改请求头的host字段，这个可能会导致请求被一些统一接入成转发到其它域名。
 	
 4. 注入html、js、css
 	
