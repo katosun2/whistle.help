@@ -4,7 +4,7 @@
 
 whistle对所有操作支持域名、路径、正则三种匹配方式。
 
-1. 域名匹配
+1. 域名匹配(如果operator-uri不为请求路径，pattern和operator-uri位置可以调换)
 
 	域名匹配可以匹配整个域名、限定域名的端口号、限定域名的请求协议
 
@@ -21,17 +21,19 @@ whistle对所有操作支持域名、路径、正则三种匹配方式。
 		www.test.com:8888 operator-uri # 8888端口
 		www.test.com/ operator-uri # http为80端口，其它443端口
 		
-2. 路径匹配
+2. 路径匹配(如果operator-uri不为请求路径，pattern和operator-uri位置可以调换)
 
 	路径匹配可以通过设置父路径来匹配请求url，父路径也可以去掉请求协议，这样所有请求只要是该路径或该路径下的子路径都可以匹配。
 	
 		# 限定请求协议，只能匹配http请求
 		http://www.test.com/xxx operator-uri
+		http://www.test.com:8080/xxx operator-uri
 		
 		# 匹配指定路径下的所有请求
 		www.test.com/xxx operator-uri
+		www.test.com:8080/xxx operator-uri
 		
-3. 正则匹配
+3. 正则匹配(pattern和operator-uri位置可以调换)
 
 	正则的语法及写法跟js的正则表达式一致，支持两种模式：/reg/、/reg/i 忽略大小写，支持子匹配，<del>但不支持/reg/g</del>，且可以通过正则的子匹配把请求url里面的部分字符串传给operator-uri。
 		
