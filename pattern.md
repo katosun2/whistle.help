@@ -2,7 +2,7 @@
 
 > HTTPS、Websocket需要[开启HTTPS拦截](webui/https.html)，whistle才能获取请求的完整的请求url，对这部分请求只有域名匹配能完整支持(路径匹配只支持`tunnel://host 或 tunnel://host:port`)，为了让匹配方式对所有请求都生效请先[开启HTTPS拦截](webui/https.html)
 
-whistle对所有操作支持**域名、路径、正则、精确**四种匹配方式(**精确匹配[v1.1.2及以上版本](https://github.com/avwo/whistle/blob/master/CHANGELOG.md#v112)才支持**)。
+whistle对所有操作支持**域名、路径、正则、精确**四种匹配方式(精确匹配需[v1.1.2及以上版本](https://github.com/avwo/whistle/blob/master/CHANGELOG.md#v112)才支持)。
 
 1. 域名匹配(如果operator-uri不为请求路径，pattern和operator-uri位置可以调换)
 
