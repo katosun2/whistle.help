@@ -75,8 +75,7 @@
   www.ifeng.com css://E:\xx\test\test.css
 	```
 
-
-	所有www.ifeng.com域名下的请求，whistle都会根据响应类型，将处理好的文本注入到响应内容里面，如是html请求，js和css会分别自动加上`script`和`style`标签后追加到内容后面。
+  所有www.ifeng.com域名下的请求，whistle都会根据响应类型，将处理好的文本注入到响应内容里面，如是html请求，js和css会分别自动加上`script`和`style`标签后追加到内容后面。
 
 5. 调试远程页面
 
@@ -101,13 +100,14 @@
 	配置后保存，鼠标放在菜单栏的weinre按钮上会显示一个列表，并点击其中的`test.js`项，whistle会自动在Values上建立一个test.js分组，在里面填入`console.log(1, 2, 3, {a: 123})`保存，打开Network -> 右侧Log -> Page，再打开[www.ifeng.com](http://www.ifeng.com/)，即可看到Log下面的Page输出的信息。
 
 6. 手机设置代理
-<div>
-  <div style="display:inline-block;width:45%;margin-right:5%">
+
+<div style="display:-webkit-box;display:flex;">
+  <div style="display:inline-block;width:40%;margin-left:5%;">
     <img src="img/iOS_proxy.png" alt="iOS" style="display:block;width:100%;">
     <br>
     <p style="text-align:center">iOS</p>
   </div>
-  <div style="display:inline-block;width:45%;">
+  <div style="display:inline-block;width:40%;margin-left:5%;">
     <img src="img/Android_proxy.png" alt="Android" style="display:block;width:100%;">
     <br>
     <p style="text-align:center">Android</p>
