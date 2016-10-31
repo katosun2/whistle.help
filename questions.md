@@ -18,7 +18,7 @@
 
 	需要安装根证书及开启https拦截，具体参考[https](webui/https.html)
 	
-	PS: Firefox自带根证书列表，需要系统根证书对Firefox不生效，需要对Firefox单独安装根证书。
+	PS: Firefox自带根证书列表，系统根证书对Firefox不生效，需要对Firefox单独安装根证书。
 
 5. 如何查看错误信息？
 
