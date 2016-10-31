@@ -10,9 +10,9 @@ whistle支持`v0.10.0`以上版本的Node，为获取更好的性能，推荐安
 1. Windows或Mac系统，访问[https://nodejs.org/](https://nodejs.org/)，安装**LTS**版本的Node，默认安装即可。
 2. Linux下推荐使用源码安装: 从[Node官网](https://nodejs.org/en/download/)下载最新版的**Source Code**(或者用`wget`命令下载)，解压文件(`tar -xzvf node-vx.y.z.tar.gz`)后进入解压后的根目录(`node-vx.y.z`)，依次执行`./configure`、`./make`和`./make install`。
 
-安装完node后，执行下面命令，查看当前node版本
+安装完Node后，执行下面命令，查看当前Node版本
 
-```
+```sh
 $ node -v
 v4.4.0
 ```
@@ -23,14 +23,14 @@ v4.4.0
 
 Node安装成功后，执行如下npm命令安装whistle （**Mac或Linux的非root用户需要在命令行前面加`sudo`，如：`sudo npm install -g whistle`**）
 
-```
+```sh
 $ npm install -g whistle
 ```
 
 	
 npm默认镜像是在国外，有时候安装速度很慢或者出现安装不了的情况，如果无法安装或者安装很慢，可以使用taobao的镜像安装：
 
-```
+```sh
 $ npm install cnpm -g --registry=https://registry.npm.taobao.org
 $ cnpm install -g whistle
 
@@ -40,7 +40,7 @@ $ npm install whistle -g --registry=https://registry.npm.taobao.org
 
 whistle安装完成后，执行命令 `whistle help` 或 `w2 help`，查看whistle的帮助信息
 
-```
+```sh
 $ w2 help
 
 Usage: w2 <command> [options]
@@ -80,24 +80,24 @@ Usage: w2 <command> [options]
 >最新版本的whistle支持三种等价的命令`whistle`、`w2`、`wproxy`
 
 启动whistle:
-```
+```sh
 $ w2 start
 ```
 
 *Note: 如果要防止其他人访问配置页面，可以在启动时加上登录用户名和密码 `-n yourusername -w yourpassword`。*
 
 重启whsitle:
-```
+```sh
 $ w2 restart
 ```
 
 停止whistle:
-```
+```sh
 $ w2 stop
 ```
 
 调试模式启动whistle(主要用于查看whistle的异常及插件开发):
-```
+```sh
 $ w2 run
 ```
 
