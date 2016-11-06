@@ -15,11 +15,7 @@
 ## 一般放到 Default 分组
 /facebook/ socks://127.0.0.1:1080
 /vk.com/ socks://127.0.0.1:1080
-/firebase/ socks://127.0.0.1:1080
-/google-analytics.com/ socks://127.0.0.1:1080
 /google/ socks://127.0.0.1:1080
-/itunes/ socks://127.0.0.1:1080
-/youtube/ socks://127.0.0.1:1080
 
 ## 一般场景是调试内嵌APP页面，APP内有一个入口链接a，而调试的目标页面是b
 ## 通过以下一行配置，页面a会自动换成页面b
