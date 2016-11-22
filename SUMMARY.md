@@ -54,7 +54,7 @@
 	* [redirect](rules/redirect.md)
 	* [location](rules/location.md)
 	* [attachment](rules/attachment.md)
-	* [params](rules/params.md)
+  * [params](rules/params.md)
   * [html](rules/html.md)
   * [css](rules/css.md)
   * [js](rules/js.md)
