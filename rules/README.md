@@ -9,6 +9,8 @@
   - [**tpl** (替换本地目标文件，可用于模拟jsonp请求)](rule/tpl.html)
   - [**xtpl** (替换本地目标文件，可用于模拟jsonp请求，则请求线上)](rule/xtpl.html)
   - [**自定义**](rule/custom.html)
+
+2. [**rulesFile** (批量设置规则或通过脚本动态获取规则)](rulesFile.html)
 3. [**weinre** (设置weinre，调试手机页面)](weinre.html)
 4. [**log** (打印网页js错误或者调试信息)](log.html)
 5. [**proxy** (代理到其它http代理服务器)](proxy.html)
