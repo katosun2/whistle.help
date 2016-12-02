@@ -16,7 +16,7 @@
 
 	pattern filter://hide
 
-配置模式：
+同时配置多种过滤规则的配置模式：
 
 	pattern filetr://operator1|operator2|operatorN
 	
