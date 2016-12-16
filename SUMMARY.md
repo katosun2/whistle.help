@@ -33,6 +33,8 @@
   * [socks](rules/socks.md)
   * [pac](rules/pac.md)
   * [filter](rules/filter.md)
+  * [ignore](rules/ignore.md)
+  * [enable](rules/enable.md)
   * [disable](rules/disable.md)
   * [delete](rules/delete.md)
   * [plugin](rules/plugin.html)
