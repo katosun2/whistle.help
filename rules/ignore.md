@@ -8,7 +8,7 @@
 例子：
 
 	#　忽略socks协议及指定插件
-	www.baidu.com socks://127.0.0.1:1008 whistle.test://xxx
+	www.baidu.com socks://127.0.0.1:1080 whistle.test://xxx
 	www.baidu.com ignore://socks|whistle.test
 
 	#　忽略proxy协议及指定插件
