@@ -2,11 +2,11 @@
 
 > Github(欢迎+Star): [https://github.com/avwo/whistle](https://github.com/avwo/whistle)
 
-[whistle][1]是一款用[Node][2]实现的跨平台的Web调试代理工具，支持查看修改http(s)、Websocket连接的请求和响应内容。
+[whistle](https://github.com/avwo/whistle)是一款用[Node](https://nodejs.org/)实现的跨平台的Web调试代理工具，支持查看修改http(s)、Websocket连接的请求和响应内容。
 
 ## 关于whistle
 
-whistle继承了[Fiddler][3]、[Charle][4]的一些优秀设计(如Fiddler请求数据的展示界面)，这两者分别是Windows、macOS平台的优秀代理工具。但whistle不是Fiddler、Charles的复制品，whistle有自己独特丰富的功能，如日志系统[log](webui/log.html)、移动调试工具[weinre](webui/weinre.html)、[插件机制](plugins.html)等。whistle也对操作请求和响应的方式做了改进，通过扩展系统hosts的配置方式及匹配方式，同时支持域名、正则和路径的匹配方式，让所有请求和响应的操作都可以通过类似hosts的配置方式实现，最新版whistle更是支持带端口号的host配置。不仅如此，开发者也可以通过whistle的插件扩展实现自身的个性化功能。实践证明这种方式使用起来方便，用户体验非常好。
+whistle继承了[Fiddler](http://www.telerik.com/fiddler/)、[Charle](https://www.charlesproxy.com/)的一些优秀设计(如Fiddler请求数据的展示界面)，这两者分别是Windows、macOS平台的优秀代理工具。但whistle不是Fiddler、Charles的复制品，whistle有自己独特丰富的功能，如日志系统[log](webui/log.html)、移动调试工具[weinre](webui/weinre.html)、[插件机制](plugins.html)等。whistle也对操作请求和响应的方式做了改进，通过扩展系统hosts的配置方式及匹配方式，同时支持域名、正则和路径的匹配方式，让所有请求和响应的操作都可以通过类似hosts的配置方式实现，最新版whistle更是支持带端口号的host配置。不仅如此，开发者也可以通过whistle的插件扩展实现自身的个性化功能。实践证明这种方式使用起来方便，用户体验非常好。
 
 <!-- 去掉Fiddler只能通过断点的修改请求响应数据的方式 -->
 
@@ -109,7 +109,9 @@ whistle的配置是从采用左到右的模式(即：`pattern operator-uri`)，�
 [MIT](https://github.com/avwo/whistle/blob/master/LICENSE)
 
 
+<!-- 
 [1]:https://github.com/avwo/whistle "whistle"
 [2]:https://nodejs.org/ "Node"
 [3]: http://www.telerik.com/fiddler/ "Fiddler"
-[4]:https://www.charlesproxy.com/ "Charles"
+[4]:https://www.charlesproxy.com/ "Charles" 
+-->
