@@ -103,7 +103,7 @@
 
 <div style="display:-webkit-box;display:flex;">
   <div style="display:inline-block;width:40%;margin-left:5%;">
-    <img src="img/iOS_proxy.png" alt="iOS" style="display:block;width:100%;">
+    <img src="img/iOS_proxy_settings.png" alt="iOS" style="display:block;width:100%;">
     <br>
     <p style="text-align:center">iOS</p>
   </div>
