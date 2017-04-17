@@ -19,6 +19,19 @@
   * done
   
   ![ubuntu Chromium](https://cloud.githubusercontent.com/assets/16034964/20553721/9c3d1bda-b191-11e6-880f-9fd6976b95cc.png)
+5. 手机
+
+  **iOS** 
+  * 手机设置代理后，Safari 地址栏输入 `rootca.pro`，按提示安装证书（或者通过 `whistle` 控制台的二维码扫码安装）
+  *  iOS 10.3 之后需要手动信任自定义根证书，设置路径：`Settings > General > About > Certificate Trust Testings`
+
+  [具体可以看这里](http://www.neglectedpotential.com/2017/04/trusting-custom-root-certificates-on-ios-10-3/)
+  
+  <img src="../img/ios10.3_ca.PNG" width="320">
+
+  **Android**
+  * `whistle` 控制台二维码扫码安装，或者浏览器地址栏 `rootca.pro` 按提示安装
+  * 部分浏览器不会自动识别 ca 证书，可以通过 Android Chrome 来完成安装
 
 ### 开启拦截Https
 
