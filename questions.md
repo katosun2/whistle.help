@@ -64,3 +64,10 @@
 10. 如何过滤调部分规则？
 
   某些情况下，需要把匹配到的某部分请求过滤掉，这个时候可以用[filter](rules/filter.html)来设置过滤`pattern filter://xxx|yyy|zzz|...`，如果想过滤做本地替换时本地没有对应文件的请求可以用[xfile](rules/rule/xfile.html)。
+
+11. iOS 10.3 证书问题
+  `iOS SSLHandshake: Received fatal alert: unknown_ca`，出现这个错误是因为 iOS 10.3 之后需要手动信任自定义根证书，设置路径：`Settings > General > About > Certificate Trust Testings`
+
+  [具体可以看这里](http://www.neglectedpotential.com/2017/04/trusting-custom-root-certificates-on-ios-10-3/)
+  
+  <img src="img/ios10.3_ca.PNG" width="320">
