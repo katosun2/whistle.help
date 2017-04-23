@@ -17,35 +17,35 @@ whistle继承了[Fiddler](http://www.telerik.com/fiddler/)、[Charle](https://ww
 whistle又是如何把操作的URI协议及其参数合成一个操作URI？首先，按参数的个数分成两类：
 
 1. 单参数的情形
-	
-	所谓单参数的操作类型指操作最多只有一个变量值，如：修改请求方法之一传人新的方法名称，修改请求referer只需传人新的url即可。对这种类型的操作，只需把变量值追加到协议后面即可，即：
-	```
-	pattern protocol://value
+  
+  所谓单参数的操作类型指操作最多只有一个变量值，如：修改请求方法之一传人新的方法名称，修改请求referer只需传人新的url即可。对这种类型的操作，只需把变量值追加到协议后面即可，即：
   ```
-		
-	由于URI里面不能有空白字符，如果value有空白字符，可以把变量值即value存放在whistle的Values系统(key:value形式)，然后通过`pattern protocol://{key}`的方式传值，whistle会自动到Values里面加载`key`对应的值(如果value对应的是本地文件路径可以用`%20`替换空格)。
+  pattern protocol://value
+  ```
+    
+  由于URI里面不能有空白字符，如果value有空白字符，可以把变量值即value存放在whistle的Values系统(key:value形式)，然后通过`pattern protocol://{key}`的方式传值，whistle会自动到Values里面加载`key`对应的值(如果value对应的是本地文件路径可以用`%20`替换空格)。
 
 2. 多参数的情形
 
-	所谓多参数的操作类型指操作可以传人大于1个参数的情形，如：添加或修改请求响应头部字段。对这类型操作，需要传人一个`key:value`集合给whistle(whistle内部把这个集合转成一个JSON对象)，whistle采用把操作协议和`key:value`集合合成一个URI:
-	
-	- 请求参数的模式
+  所谓多参数的操作类型指操作可以传人大于1个参数的情形，如：添加或修改请求响应头部字段。对这类型操作，需要传人一个`key:value`集合给whistle(whistle内部把这个集合转成一个JSON对象)，whistle采用把操作协议和`key:value`集合合成一个URI:
+  
+  - 请求参数的模式
     ```
-		pattern protocol://key1=value1&key2=value2&keyN=valueN
-		```
-
-		如果key或value有空白字符用`encodeURIComponent`转换成实体编码，whistle会自动通过Node的`querystring.parse`把URI里面的值解析成JSON对象。
-		
-	- 利用[操作符](webui/rules.html)`()`
+    pattern protocol://key1=value1&key2=value2&keyN=valueN
     ```
-		pattern protocol://({"key1":"value1","key2":"value2","keyN":"valueN"})
-		```	
-		这种情况下`key:value`不能空白字符。
-		
-	- 通用方式
 
-		对这类型操作whistle支持把`key:value`存放在whistle的Values系统或者本地文件里面
-		```
+    如果key或value有空白字符用`encodeURIComponent`转换成实体编码，whistle会自动通过Node的`querystring.parse`把URI里面的值解析成JSON对象。
+    
+  - 利用[操作符](webui/rules.html)`()`
+    ```
+    pattern protocol://({"key1":"value1","key2":"value2","keyN":"valueN"})
+    ``` 
+    这种情况下`key:value`不能空白字符。
+    
+  - 通用方式
+
+    对这类型操作whistle支持把`key:value`存放在whistle的Values系统或者本地文件里面
+    ```
     # 存放在whistle的Values里面
     pattern protocol://{key}
     
@@ -57,34 +57,34 @@ whistle又是如何把操作的URI协议及其参数合成一个操作URI？首�
 
     # 存放在非Windows系统的文件里面
     pattern protocol:///xxx
-		```
+    ```
 
-		`key:value`在这些系统里面可以采用如下3种格式描述：
-		
-		- 请求参数格式
+    `key:value`在这些系统里面可以采用如下3种格式描述：
+    
+    - 请求参数格式
       
-				key1=value1&key2=value2&keyN=valueN
-			
-		- 分割符(`:空格`)格式
-				
-				key1: value1
-				key2: value2
-				keyN: valueN
-		
-		- JSON格式
+        key1=value1&key2=value2&keyN=valueN
+      
+    - 分割符(`:空格`)格式
+        
+        key1: value1
+        key2: value2
+        keyN: valueN
+    
+    - JSON格式
 
-				{
-					"key1": value1,
-					"key2": value2,
-					"keyN": valueN
-				}
-				
-			第三种格式可以支持任意字符。
+        {
+          "key1": value1,
+          "key2": value2,
+          "keyN": valueN
+        }
+        
+      第三种格式可以支持任意字符。
 
 最后，我们把所有操作抽象成如下方式：
 
-	pattern operator-uri
-	
+  pattern operator-uri
+  
 其中，`pattern`可以参考[匹配方式](pattern.html)，`operator-uri`可以参考[协议列表](rules/index.html)。
 
 
@@ -92,19 +92,19 @@ whistle的配置是从采用左到右的模式(即：`pattern operator-uri`)，�
 
 1. 调换位置
 
-	如果`pattern`为正则，或者`operator-uri`为ip、或存在非http(s)的协议，`pattern`和`operator-uri`的位置可以对调：
-	
-		operator-uri pattern
-	
+  如果`pattern`为正则，或者`operator-uri`为ip、或存在非http(s)的协议，`pattern`和`operator-uri`的位置可以对调：
+  
+    operator-uri pattern
+  
 2. 组合模式
 
-		pattern operator-uri1 operator-uri2 operator-uriN
-		
-	如果pattern1为正则，或者`operator-uri`为ip、或存在非http(s)的协议，也可以写成：
-	
-		operator-uri pattern1 pattern2 patternN
-		
-	
+    pattern operator-uri1 operator-uri2 operator-uriN
+    
+  如果pattern1为正则，或者`operator-uri`为ip、或存在非http(s)的协议，也可以写成：
+  
+    operator-uri pattern1 pattern2 patternN
+    
+  
 ## License
 [MIT](https://github.com/avwo/whistle/blob/master/LICENSE)
 
