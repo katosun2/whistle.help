@@ -2,7 +2,7 @@
 
 > HTTPS、Websocket需要[开启HTTPS拦截](webui/https.html)，whistle才能获取完整的请求url，对这部分请求只有域名匹配能完整支持(路径匹配只支持`tunnel://host 或 tunnel://host:port`)，为了让匹配方式对所有请求都生效请先[开启HTTPS拦截](webui/https.html)
 
-whistle对所有操作支持**域名、路径、正则、精确匹配**四种匹配方式(精确匹配需[v1.1.2及以上版本](https://github.com/avwo/whistle/blob/master/CHANGELOG.md#v112)才支持)。
+whistle对所有操作支持**域名、路径、正则、精确匹配、通配符匹配**五种匹配方式(精确匹配需[v1.1.2及以上版本](https://github.com/avwo/whistle/blob/master/CHANGELOG.md#v112)才支持)。
 
 1. 域名匹配(如果operator-uri不为请求路径，pattern和operator-uri位置可以调换)
 
@@ -71,3 +71,35 @@ whistle对所有操作支持**域名、路径、正则、精确匹配**四种匹
 		- `https://www.test.com/xxx`
 		- `ws://www.test.com/xxx`
 		- `wss://www.test.com/xxx`
+
+5. 通配符匹配(whistle >= v1.4.10，pattern和operator-uri位置可以调换)
+
+		# 匹配二级域名以 .com 结尾的所有url，如: test.com, abc.com，但不包含 *.xxx.com
+		*.com file:///User/xxx/test
+		//*.com file:///User/xxx/test
+
+		# 匹配 test.com 的子域名，不包括 test.com
+		# 也不包括诸如 *.xxx.test.com 的四级域名，只能包含: a.test.com，www.test.com 等test.com的三级域名
+		*.test.com file:///User/xxx/test
+		//*.test.com file:///User/xxx/test
+
+		# 如果要配置所有子域名生效，可以使用 **
+		**.com file:///User/xxx/test
+		**.test.com file:///User/xxx/test
+
+		# 限定协议，只对http生效
+		http://*.com file:///User/xxx/test
+		http://**.com file:///User/xxx/test
+		http://*.test.com file:///User/xxx/test
+		http://**.test.com file:///User/xxx/test
+
+		# 路径
+		*.com/abc/efg file:///User/xxx/test
+		**.com/abc/efg file:///User/xxx/test
+		*.test.com/abc/efg file:///User/xxx/test
+		**.test.com/abc/efg file:///User/xxx/test
+
+		http://*.com/abc/efg file:///User/xxx/test
+		http://**.com/abc/efg file:///User/xxx/test
+		http://*.test.com/abc/efg file:///User/xxx/test
+		http://**.test.com/abc/efg file:///User/xxx/test
