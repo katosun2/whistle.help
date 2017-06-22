@@ -78,7 +78,7 @@ whistle对所有操作支持**域名、路径、正则、精确匹配、通配�
 
 *Note: 协议包含http、https、ws、wss，tunnel共5种，tunnel协议的url只有根路径不支持子路径匹配*
 
-### 通配符匹配(whistle版本必须为v1.4.10及以上)
+#### 通配符匹配(whistle版本必须为v1.4.10及以上)
 pattern和operator-uri位置可以调换
 
 	# 匹配二级域名以 .com 结尾的所有url，如: test.com, abc.com，但不包含 *.xxx.com
