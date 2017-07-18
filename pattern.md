@@ -2,7 +2,7 @@
 
 > HTTPS、Websocket需要[开启HTTPS拦截](webui/https.html)，whistle才能获取完整的请求url，对这部分请求只有域名匹配能完整支持(路径匹配只支持`tunnel://host 或 tunnel://host:port`)，为了让匹配方式对所有请求都生效请先[开启HTTPS拦截](webui/https.html)
 
-whistle对所有操作支持**域名、路径、正则、精确匹配、通配符匹配**五种匹配方式(精确匹配需[v1.1.2及以上版本](https://github.com/avwo/whistle/blob/master/CHANGELOG.md#v112)才支持)。
+whistle对所有操作支持**域名、路径、正则、精确匹配、通配符匹配、通配路径匹配**六种种匹配方式([安装最新版本](update.html)才能确保这些匹配方式都支持才支持)。
 
 #### 域名匹配
 域名匹配可以匹配整个域名、限定域名的端口号、限定域名的请求协议，如果operator-uri不为请求路径，pattern和operator-uri位置可以调换。
@@ -110,3 +110,23 @@ pattern和operator-uri位置可以调换
 	http://**.com/abc/efg file:///User/xxx/test
 	http://*.test.com/abc/efg file:///User/xxx/test
 	http://**.test.com/abc/efg file:///User/xxx/test
+
+#### 通配路径匹配(whistle版本必须为v1.4.18及以上)
+
+	# 对所有域名对应的路径 protocol://a.b.c/xxx[/yyy]都生效
+	~/
+	~/xxx
+	tunnel://~/ # tunnel只支持根路径匹配
+	http://~/
+	https://~/xxx
+	ws://~/xxx
+	wss://~/xxx
+
+	# 也可以指定路径，不包含该路径的子路径
+	$~/
+	$~/xxx
+	$tunnel://~/ # tunnel只支持根路径匹配
+	$http://~/
+	$https://~/xxx
+	$ws://~/xxx
+	$wss://~/xxx

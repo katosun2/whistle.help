@@ -30,6 +30,7 @@
   # or
   host://www.qq.com:8080 www.ifeng.com
 	```	
+ 更多匹配方式参考：[匹配方式](pattern.html)
 
 2. 本地替换
 	
