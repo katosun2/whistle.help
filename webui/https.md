@@ -1,5 +1,11 @@
 # Https
 
+> 建议使用 `Node v6` 或以上版本，否则性能及在Chrome或APP上[抓包HTTPS请求](https://avwo.github.io/whistle/webui/https.html)会有问题。
+
+> 如果出现HTTPS的问题([#44](https://github.com/avwo/whistle/issues/44))，升级Node到 `v6` 及以上版本，[更新whistle](https://avwo.github.io/whistle/update.html)到最新版本，通过 `w2 restart -A` (注意后面加 `-A`)启动生成新的更证书，再[安装下根证书](https://avwo.github.io/whistle/webui/https.html)即可。
+
+> **在iOS上安装根证书时，需要先关闭[https拦截](https://avwo.github.io/whistle/webui/https.html)，否则将显示安装失败。**
+
 用来下载根证书、隐藏`connect`类型的请求、开启Https拦截功能。
 
 ![Https](../img/https.gif)
@@ -35,7 +41,7 @@
 
 ### 开启拦截Https
 
-图中的打开的对话框有两个checkbox：
+图中的打开的对话框有两个checkbox(**在iOS安装根证书的时候，记得不要开启` Intercept HTTPS CONNECTs`，否则将无法安装成功**)：
 
 1. ` Hide HTTPS CONNECTs`：隐藏`connect`类型的请求
 2. ` Intercept HTTPS CONNECTs`：开启Https拦截功能，只有勾上这个checkbox及装好根证书，whistle才能看到HTTPS、Websocket的请求

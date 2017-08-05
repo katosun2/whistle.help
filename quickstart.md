@@ -1,4 +1,7 @@
 # 快速上手
+
+> 推荐看这篇文章：[whistle工具全程入门](http://imweb.io/topic/596480af33d7f9a94951744c)
+
 按[上述方法](install.html)安装好whistle后，用Chrome浏览器打开配置页面: [http://local.whistlejs.com](http://local.whistlejs.com/)
 
 如图[Rules](webui/rules.html)，whistle的Rules配置页面有一个默认分组`Default`，用户也可以通过上面的菜单栏按钮`Create`、`Edit`、`Delete`分别创建、重命名、删除自定义分组，whistle先在选中的用户自定义分组中从上到下依次匹配，然后再到`Default`中匹配(如果`Default`分组被启用的情况下)。
@@ -30,6 +33,7 @@
   # or
   host://www.qq.com:8080 www.ifeng.com
 	```	
+ 更多匹配方式参考：[匹配方式](pattern.html)
 
 2. 本地替换
 	
