@@ -18,6 +18,7 @@
     * [Rules](webui/rules.md)
     * [Values](webui/values.md)
     * [Plugins](webui/plugins.md)
+    * [WebSocket](webui/websocket.md)
     * [Settings](webui/settings.md)
     * [Weinre](webui/weinre.md)
     * [Https](webui/https.md)
