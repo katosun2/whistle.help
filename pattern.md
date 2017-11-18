@@ -130,3 +130,5 @@ pattern和operator-uri位置可以调换
 	$https://~/xxx
 	$ws://~/xxx
 	$wss://~/xxx
+
+如： `~/cgi-bin 10.10.1.1:9999`，表示所有 `xxx.xxx.xxx/cgi-bin/xxx` 的请求都会请求 `10.10.1.1:9999` 对应的服务器。
