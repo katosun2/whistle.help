@@ -30,15 +30,12 @@
 
 7. 如何实现反向代理的功能？
 
- 启动whistle时设置监听的端口为80:
+ whistle作为反向代理只支持http访问，启动whistle时设置监听的端口为80:
 
 	 	w2 start -p 80
 		#或
 	 	w2 restart -p 80
 
- 如果要同时支持https需要在443端口上启一个：
- ​	
- 		w2 start -p 443 -S
 
  非root用户需要加`sudo w2 start -p 80`。
  ​	
@@ -47,7 +44,8 @@
 	 	www.test1.com host://127.0.0.1:8080
 	 	www.test2.com host://127.0.0.1:8181
 
- 这样访问`www.test1.com`或`www.test2.com`的请求会自动转到8080或8181端口，实现无端口访问
+ 这样访问`www.test1.com`或`www.test2.com`的请求会自动转到8080或8181端口，实现无端口访问。
+PS：如果要用IP访问，可以采用 `http://127.0.0.1/-/xxx` 或 `http://127.0.0.1/_/xxx`，whistle会自动转成 `http://127.0.0.1/xxx`
 
 8. 如何让Rules支持多选？
 
