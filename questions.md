@@ -32,21 +32,20 @@
 
  启动whistle时设置监听的端口为80:
 
- 	w2 start -p 80
-
- 	#或
- 	w2 restart -p 80
+	 	w2 start -p 80
+		#或
+	 	w2 restart -p 80
 
  如果要同时支持https需要在443端口上启一个：
  ​	
- 	w2 start -p 443 -S
+ 		w2 start -p 443 -S
 
  非root用户需要加`sudo w2 start -p 80`。
  ​	
  根据域名、或路径、或正则表达式配置带端口的host：
 
- 	www.test1.com host://127.0.0.1:8080
- 	www.test2.com host://127.0.0.1:8181
+	 	www.test1.com host://127.0.0.1:8080
+	 	www.test2.com host://127.0.0.1:8181
 
  这样访问`www.test1.com`或`www.test2.com`的请求会自动转到8080或8181端口，实现无端口访问
 
