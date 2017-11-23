@@ -1,6 +1,6 @@
 # forwardedFor
 
-修改请求头的 `x-forwarded-for` 字段，配置模式：
+修改请求头的 `x-forwarded-for` 字段(`whistle >= v1.6.1`)，配置模式：
 
 	pattern forwardedFor://ip
 	
