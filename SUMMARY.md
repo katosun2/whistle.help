@@ -61,6 +61,7 @@
     * [cache](rules/cache.md)
     * [redirect](rules/redirect.md)
     * [attachment](rules/attachment.md)
+    * [forwardedFor](rules/forwardedFor.md)
     * [params](rules/params.md)
     * [html](rules/html.md)
     * [css](rules/css.md)
