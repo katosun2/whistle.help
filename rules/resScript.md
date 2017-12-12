@@ -56,19 +56,10 @@ resScript.txt:
 	
 resScript.js:
 
-	if (/index\.html/i.test(url)) {
-		rules.push('/./ redirect://http://www.ifeng.com/?test.js');
-	}
-
-	if (/html/.test(headers.accept)) {
-		rules.push('/./ resType://text');
-	}
-	// 如果请求内容里面有prefix字段，则作为新url的前缀
-	if (/(?:^|&)prefix=([^&]+)/.test(body)) {
-	  	var prefix = RegExp.$1;
-	  	var index = url.indexOf('://') + 3;
-	  	var schema = url.substring(0, index);
-	  	var newUrl = schema + prefix + '.' + url.substring(index);
-		rules.push(url + ' ' + newUrl);
-		// rules.push('/./ ' + newUrl);
-	}
+	const options = parseUrl(url);
+	rules.push(`${options.host} resCookies://{cookies.json}`);
+	values['cookies.json'] = {
+		serverIp,
+		clientIp,
+		from: 'resScript'
+	};
