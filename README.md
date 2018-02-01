@@ -2,116 +2,77 @@
 
 > Github(欢迎+Star): [https://github.com/avwo/whistle](https://github.com/avwo/whistle)
 
-[whistle](https://github.com/avwo/whistle)是一款用[Node](https://nodejs.org/)实现的跨平台的Web调试代理工具，支持查看修改http(s)、Websocket连接的请求和响应内容。
+[whistle](https://github.com/avwo/whistle)(读音[ˈwɪsəl]，拼音[wēisǒu])基于Node实现的跨平台web调试代理工具，类似的工具有Windows平台上的[Fiddler](http://www.telerik.com/fiddler/)，主要用于查看、修改HTTP、HTTPS、Websocket的请求、响应，也可以作为HTTP代理服务器使用，不同于Fiddler通过断点修改请求响应的方式，whistle采用的是类似配置系统hosts的方式，一切操作都可以通过配置实现，支持域名、路径、正则表达式、通配符、通配路径等多种[匹配方式](./pattern.html)，且可以通过Node模块[扩展功能](./plugins.html)：
 
-## 关于whistle
+![基本功能](https://raw.githubusercontent.com/avwo/whistleui/master/assets/whistle.png)
 
-whistle继承了[Fiddler](http://www.telerik.com/fiddler/)、[Charle](https://www.charlesproxy.com/)的一些优秀设计(如Fiddler请求数据的展示界面)，这两者分别是Windows、macOS平台的优秀代理工具。但whistle不是Fiddler、Charles的复制品，whistle有自己独特丰富的功能，如日志系统[log](webui/log.html)、移动调试工具[weinre](webui/weinre.html)、[插件机制](plugins.html)等。whistle也对操作请求和响应的方式做了改进，通过扩展系统hosts的配置方式及匹配模式，同时支持域名、正则和路径的匹配模式，让所有请求和响应的操作都可以通过类似hosts的配置方式实现，最新版whistle更是支持带端口号的host配置。不仅如此，开发者也可以通过whistle的插件扩展实现自身的个性化功能。实践证明这种方式使用起来方便，用户体验非常好。
+whistle的所有操作都可以通过类似如下配置方式实现：
 
-<!-- 去掉Fiddler只能通过断点的修改请求响应数据的方式 -->
+	pattern operatorURI
 
-## 实现原理
 
-首先，whistle把每类操作(如修改请求头的`referer`)抽象成一个URI协议(如`referer://`)，每个具体操作都通过其对应协议及该协议后面的若干参数来描述；接着whistle把操作的URI协议及若干参数合成一个操作URI(如修改referer: `referer://http://wproxy.org`)；最后，whistle把对请求的响应操作转换成请求url到操作URI的匹配(whistle提供了更加丰富的域名、路径、正则三种匹配模式)。
+其中：
 
-whistle又是如何把操作的URI协议及其参数合成一个操作URI？首先，按参数的个数分成两类：
+1. **pattern** 为匹配请求url的表达式，可以为：域名，路径，正则及通配符等等多种匹配方式：
 
-1. 单参数的情形
-	
-	所谓单参数的操作类型指操作最多只有一个变量值，如：修改请求方法之一传人新的方法名称，修改请求referer只需传人新的url即可。对这种类型的操作，只需把变量值追加到协议后面即可，即：
-	```
-	pattern protocol://value
-  ```
-		
-	由于URI里面不能有空白字符，如果value有空白字符，可以把变量值即value存放在whistle的Values系统(key:value形式)，然后通过`pattern protocol://{key}`的方式传值，whistle会自动到Values里面加载`key`对应的值(如果value对应的是本地文件路径可以用`%20`替换空格)。
+		# 域名匹配
+		www.example.com
+		# 带端口的域名
+		www.example.com:6666
+		# 带协议的域名，支持：http、https、ws、wss、tunnel
+		http://www.example.com
 
-2. 多参数的情形
+		# 路径匹配，同样支持带协议、端口
+		www.example.com/test
+		https:/www.exapmle.com/test
+		https:/www.exapmle.com:6666/test
 
-	所谓多参数的操作类型指操作可以传人大于1个参数的情形，如：添加或修改请求响应头部字段。对这类型操作，需要传人一个`key:value`集合给whistle(whistle内部把这个集合转成一个JSON对象)，whistle采用把操作协议和`key:value`集合合成一个URI:
-	
-	- 请求参数的模式
-    ```
-		pattern protocol://key1=value1&key2=value2&keyN=valueN
-		```
+		# 正则匹配
+		/^https?://www\.example\.com\/test/(.*)/ referer://http://www.test.com/$1
 
-		如果key或value有空白字符用`encodeURIComponent`转换成实体编码，whistle会自动通过Node的`querystring.parse`把URI里面的值解析成JSON对象。
-		
-	- 利用[操作符](webui/rules.html)`()`
-    ```
-		pattern protocol://({"key1":"value1","key2":"value2","keyN":"valueN"})
-		```	
-		这种情况下`key:value`不能空白字符。
-		
-	- 通用方式
+		# 通配符匹配
+		^www.example.com/test/*** referer://http://www.test.com/$1
 
-		对这类型操作whistle支持把`key:value`存放在whistle的Values系统或者本地文件里面
-		```
-    # 存放在whistle的Values里面
-    pattern protocol://{key}
-    
-    # 存放在Windows系统的文件里面
-    # 在Windows中路径分割符`\`和`/`通用
-    pattern protocol://E:\xxx
-    # or
-    pattern protocol://E:/xxx
-
-    # 存放在非Windows系统的文件里面
-    pattern protocol:///xxx
-		```
-
-		`key:value`在这些系统里面可以采用如下3种格式描述：
-		
-		- 请求参数格式
-      
-				key1=value1&key2=value2&keyN=valueN
-			
-		- 分割符(`:空格`)格式
+	完整内容参见：[匹配模式](./pattern.html)
 				
-				key1: value1
-				key2: value2
-				keyN: valueN
+
+2. **operatorURI** 为对应的操作，由操作协议+操作值组成(`operatorURI = opProtocol://opValue`)：
+	- **操作协议**(`opProtocol`) 对应某类操作，如：
 		
-		- JSON格式
+			# 设置请求服务器IP--host
+			pattern host://opValue	
 
-				{
-					"key1": value1,
-					"key2": value2,
-					"keyN": valueN
-				}
-				
-			第三种格式可以支持任意字符。
+			# 本地替换--file协议
+			pattern file://opValue
 
-最后，我们把所有操作抽象成如下方式：
+	- **操作值**(`opValue`) 对应具体操作的参数值，如：
 
-	pattern operator-uri
-	
-其中，`pattern`可以参考[匹配模式](pattern.html)，`operator-uri`可以参考[协议列表](rules/index.html)。
+			# 设置请求服务器IP--host协议
+			pattern host://127.0.0.1:6666 # 或 pattern 127.0.0.1:6666	
 
+			# 本地替换--file协议
+			pattern file:///User/test/dirOrFile # 或 pattern /User/test/dirOrFile
+			pattern file://E:\test\dirOrFile # 或 pattern E:\test\dirOrFile
 
-whistle的配置是从采用左到右的模式(即：`pattern operator-uri`)，从上到下的优先顺序，为了兼容传统的hosts配置方式，whistle也支持如下的配置方式：
-
-1. 调换位置
-
-	如果`pattern`为正则，或者`operator-uri`为ip、或存在非http(s)的协议，`pattern`和`operator-uri`的位置可以对调：
-	
-		operator-uri pattern
-	
-2. 组合模式
-
-		pattern operator-uri1 operator-uri2 operator-uriN
+3. **pattern** 和 **operatorURI** 在多数情况下位置可以调换，且支持组合模式，具体参见：[配置方式](./mode.html)
 		
-	如果pattern1为正则，或者`operator-uri`为ip、或存在非http(s)的协议，也可以写成：
+# 目录
+1. [安装启动](install.md)
+* [手动更新](update.md)
+* [快速上手](quickstart.md)
+* [配置方式](mode.md)
+* [匹配模式](pattern.md)
+* [操作值](data.md)
+* [常用功能](frequet.md)
+* [插件开发](plugins.md)
+* [注意事项](attention.md)
+* [关于ATS](ats.md)
+* [常见问题](questions.md)
+* [界面功能](webui/README.md)
+* [协议列表](rules/README.md)
+* [用户反馈](feedback.md)
 	
-		operator-uri pattern1 pattern2 patternN
-		
-	
-## License
+# License
 [MIT](https://github.com/avwo/whistle/blob/master/LICENSE)
 
 
-<!-- 
-[1]:https://github.com/avwo/whistle "whistle"
-[2]:https://nodejs.org/ "Node"
-[3]: http://www.telerik.com/fiddler/ "Fiddler"
-[4]:https://www.charlesproxy.com/ "Charles" 
--->
