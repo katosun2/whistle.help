@@ -34,18 +34,17 @@ whistle的所有操作都可以通过类似如下配置方式实现：
 		^www.example.com/test/*** referer://http://www.test.com/$1
 
 	完整内容参见：[匹配模式](./pattern.html)
-				
-
 2. **operatorURI** 为对应的操作，由操作协议+操作值组成(`operatorURI = opProtocol://opValue`)：
-	- **操作协议**(`opProtocol`) 对应某类操作，如：
+	
+	**opProtocol**(操作协议)， 对应某类操作，如：
 		
 			# 设置请求服务器IP--host
 			pattern host://opValue	
 
 			# 本地替换--file协议
 			pattern file://opValue
-
-	- **操作值**(`opValue`) 对应具体操作的参数值，如：
+	
+	**opValue**(操作值)， 对应具体操作的参数值，如：
 
 			# 设置请求服务器IP--host协议
 			pattern host://127.0.0.1:6666 # 或 pattern 127.0.0.1:6666	
@@ -54,6 +53,7 @@ whistle的所有操作都可以通过类似如下配置方式实现：
 			pattern file:///User/test/dirOrFile # 或 pattern /User/test/dirOrFile
 			pattern file://E:\test\dirOrFile # 或 pattern E:\test\dirOrFile
 
+  	完整内容参见：[操作值](./data.html)
 3. **pattern** 和 **operatorURI** 在多数情况下位置可以调换，且支持组合模式，具体参见：[配置方式](./mode.html)
 		
 # 目录

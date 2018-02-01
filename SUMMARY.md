@@ -1,6 +1,6 @@
 # Summary
 
-* [实现原理](README.md)
+* [关于whistle](README.md)
 * [安装启动](install.md)
 * [手动更新](update.md)
 * [快速上手](quickstart.md)

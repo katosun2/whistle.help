@@ -8,8 +8,9 @@ whistle的所有操作都可以通过配置实现，配置方式扩展于系统h
 ## whistle有以下三种匹配模式：
 
 1. 默认模式
-	默认是将匹配模式写在左边，操作uri写在右边
 	
+  默认是将匹配模式写在左边，操作uri写在右边
+  
 		pattern operatorURI
 		
 	whistle将请求url与pattern匹配，如果匹配到就执行operatorURI对应的操作

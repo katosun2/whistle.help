@@ -23,7 +23,7 @@ whistle的操作值可以分两类，字符串和JSON对象。
 
 3. 如果操作值为**JSON对象**，则可以用以下几种格式：
 
-	- 正常的JSON格式
+  正常的JSON格式：
 
 			{
 			  "key1": value1,
@@ -31,7 +31,7 @@ whistle的操作值可以分两类，字符串和JSON对象。
 			  "keyN": valueN
 			}
 
-	- 分隔符格式
+  行格式：
 
 			# 以 `冒号+空格` 分隔
 			key1: value1
@@ -44,12 +44,12 @@ whistle的操作值可以分两类，字符串和JSON对象。
 			key3
 			keyN: valueN
 
-	- 内联格式(请求参数格式)
+  内联格式(请求参数格式)：
 
 			# key和value最好都encodeURIComponent
 			key1=value1&key2=value2&keyN=valueN
 
 	
-注意：最后一种内联格式可以把JSON对象直接转化为字符串，这样可以用第一种方式直接写到配置里面，如果key或value里面出现 `空格`、`&`、`&` 或 `=`，则需要把它们 `encodeURIComponent`，whistle会对每个key和value尝试 `decodeURIComponent`。
+注意：最后一种内联格式可以把JSON对象直接转化为字符串，这样可以用第一种方式直接写到配置里面，如果key或value里面出现 `空格`、`&`、`%` 或 `=`，则需要把它们 `encodeURIComponent`，whistle会对每个key和value尝试 `decodeURIComponent`。
 
 
