@@ -6,7 +6,7 @@
 * [快速上手](quickstart.md)
 * [配置方式](mode.md)
 * [匹配模式](pattern.md)
-* [数据格式](data.md)
+* [操作值](data.md)
 * [常用功能](frequet.md)
 * [插件开发](plugins.md)
 * [注意事项](attention.md)
