@@ -6,13 +6,13 @@
 
 ## 关于whistle
 
-whistle继承了[Fiddler](http://www.telerik.com/fiddler/)、[Charle](https://www.charlesproxy.com/)的一些优秀设计(如Fiddler请求数据的展示界面)，这两者分别是Windows、macOS平台的优秀代理工具。但whistle不是Fiddler、Charles的复制品，whistle有自己独特丰富的功能，如日志系统[log](webui/log.html)、移动调试工具[weinre](webui/weinre.html)、[插件机制](plugins.html)等。whistle也对操作请求和响应的方式做了改进，通过扩展系统hosts的配置方式及匹配方式，同时支持域名、正则和路径的匹配方式，让所有请求和响应的操作都可以通过类似hosts的配置方式实现，最新版whistle更是支持带端口号的host配置。不仅如此，开发者也可以通过whistle的插件扩展实现自身的个性化功能。实践证明这种方式使用起来方便，用户体验非常好。
+whistle继承了[Fiddler](http://www.telerik.com/fiddler/)、[Charle](https://www.charlesproxy.com/)的一些优秀设计(如Fiddler请求数据的展示界面)，这两者分别是Windows、macOS平台的优秀代理工具。但whistle不是Fiddler、Charles的复制品，whistle有自己独特丰富的功能，如日志系统[log](webui/log.html)、移动调试工具[weinre](webui/weinre.html)、[插件机制](plugins.html)等。whistle也对操作请求和响应的方式做了改进，通过扩展系统hosts的配置方式及匹配模式，同时支持域名、正则和路径的匹配模式，让所有请求和响应的操作都可以通过类似hosts的配置方式实现，最新版whistle更是支持带端口号的host配置。不仅如此，开发者也可以通过whistle的插件扩展实现自身的个性化功能。实践证明这种方式使用起来方便，用户体验非常好。
 
 <!-- 去掉Fiddler只能通过断点的修改请求响应数据的方式 -->
 
 ## 实现原理
 
-首先，whistle把每类操作(如修改请求头的`referer`)抽象成一个URI协议(如`referer://`)，每个具体操作都通过其对应协议及该协议后面的若干参数来描述；接着whistle把操作的URI协议及若干参数合成一个操作URI(如修改referer: `referer://http://wproxy.org`)；最后，whistle把对请求的响应操作转换成请求url到操作URI的匹配(whistle提供了更加丰富的域名、路径、正则三种匹配方式)。
+首先，whistle把每类操作(如修改请求头的`referer`)抽象成一个URI协议(如`referer://`)，每个具体操作都通过其对应协议及该协议后面的若干参数来描述；接着whistle把操作的URI协议及若干参数合成一个操作URI(如修改referer: `referer://http://wproxy.org`)；最后，whistle把对请求的响应操作转换成请求url到操作URI的匹配(whistle提供了更加丰富的域名、路径、正则三种匹配模式)。
 
 whistle又是如何把操作的URI协议及其参数合成一个操作URI？首先，按参数的个数分成两类：
 
@@ -85,10 +85,10 @@ whistle又是如何把操作的URI协议及其参数合成一个操作URI？首�
 
 	pattern operator-uri
 	
-其中，`pattern`可以参考[匹配方式](pattern.html)，`operator-uri`可以参考[协议列表](rules/index.html)。
+其中，`pattern`可以参考[匹配模式](pattern.html)，`operator-uri`可以参考[协议列表](rules/index.html)。
 
 
-whistle的配置是从采用左到右的模式(即：`pattern operator-uri`)，从上到下的优先顺序，为了兼容传统的hosts配置模式，whistle也支持如下的配置模式：
+whistle的配置是从采用左到右的模式(即：`pattern operator-uri`)，从上到下的优先顺序，为了兼容传统的hosts配置方式，whistle也支持如下的配置方式：
 
 1. 调换位置
 

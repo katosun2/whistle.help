@@ -33,7 +33,7 @@
   # or
   host://www.qq.com:8080 www.ifeng.com
 	```	
- 更多匹配方式参考：[匹配方式](pattern.html)
+ 更多匹配模式参考：[匹配模式](pattern.html)
 
 2. 本地替换
 	
@@ -90,7 +90,8 @@
 	weinre：
 
 	```
-	www.ifeng.com weinre://test
+
+om weinre://test
 	```	
   
 	配置后保存，打开[www.ifeng.com](http://www.ifeng.com/)，鼠标放在菜单栏的weinre按钮上会显示一个列表，并点击其中的`test`项打开weinre的调试页面选择对应的url切换到Elements即可。
