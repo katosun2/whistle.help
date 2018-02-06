@@ -55,6 +55,7 @@
 	
 	也可以替换jsonp请求，具体参见[tpl](rules/rule/tpl.html)
 
+  更多匹配模式参考：[匹配模式](pattern.html)
 3. 请求转发	
 	
 	[www.ifeng.com](http://www.ifeng.com/)域名下的请求都替换成对应的www.aliexpress.com域名
@@ -62,7 +63,8 @@
   ```
 	www.ifeng.com www.aliexpress.com
 	```	
-	
+
+	更多匹配模式参考：[匹配模式](pattern.html)
 4. 注入html、js、css
 	
 	whistle会自动根据响应内容的类型，判断是否注入相应的文本及如何注入(是否要用标签包裹起来)。
@@ -81,6 +83,7 @@
 
   所有www.ifeng.com域名下的请求，whistle都会根据响应类型，将处理好的文本注入到响应内容里面，如是html请求，js和css会分别自动加上`script`和`style`标签后追加到内容后面。
 
+  更多匹配模式参考：[匹配模式](pattern.html)
 5. 调试远程页面
 
 	利用whistle提供的[weinre](rules/weinre.html)和[log](rules/log.html)两个协议，可以实现修改远程页面DOM结构及自动捕获页面js错误及console打印的信息，还可以在页面顶部或js文件底部注入指定的脚步调试页面信息。
@@ -103,6 +106,7 @@
 
 	配置后保存，鼠标放在菜单栏的weinre按钮上会显示一个列表，并点击其中的`test.js`项，whistle会自动在Values上建立一个test.js分组，在里面填入`console.log(1, 2, 3, {a: 123})`保存，打开Network -> 右侧Log -> Page，再打开[www.ifeng.com](http://www.ifeng.com/)，即可看到Log下面的Page输出的信息。
 
+  更多匹配模式参考：[匹配模式](pattern.html)
 6. 手机设置代理
 
 <div style="display:-webkit-box;display:flex;">
