@@ -90,8 +90,7 @@
 	weinre：
 
 	```
-
-om weinre://test
+  www.ifeng.com weinre://test
 	```	
   
 	配置后保存，打开[www.ifeng.com](http://www.ifeng.com/)，鼠标放在菜单栏的weinre按钮上会显示一个列表，并点击其中的`test`项打开weinre的调试页面选择对应的url切换到Elements即可。
