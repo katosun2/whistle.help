@@ -33,6 +33,7 @@
         * [tpl](rules/rule/tpl.md)
         * [xtpl](rules/rule/xtpl.md)
         * [rawfile](rules/rule/rawfile.md)
+        * [xrawfile](rules/rule/xrawfile.md)
         * [自定义](rules/rule/custom.md)
     * [weinre](rules/weinre.md)
     * [log](rules/log.md)
